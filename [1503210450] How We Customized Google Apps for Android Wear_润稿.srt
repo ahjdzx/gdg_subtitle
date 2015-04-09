@@ -35,7 +35,7 @@ I'm going to focus on four apps that
 
 8
 00:00:18,570 --> 00:00:22,450
-来展示使用Android Wear API进行开发的不同点  分别是 Gmail
+来展示使用Android Wear API开发的不同点  分别是 Gmail
 showcase different aspects of the Android Wear API, Gmail,
 
 9
@@ -65,17 +65,17 @@ Gmail generates two types of notifications on your phone.
 
 14
 00:00:34,827 --> 00:00:36,910
-一种是当你收到一封电子邮件时
+一种是是像这样  当你收到一封电子邮件时
 A notification like this, when you have one email.
 
 15
 00:00:36,910 --> 00:00:40,620
-另一种是当你有多封未读邮件时
+另一种是像这样  当你有多封未读邮件时
 And a notification like this, when you have multiple unread emails.
 
 16
 00:00:40,620 --> 00:00:43,480
-对于一封电子邮件的通知  会包含这封电子邮件的部分内容
+一封电子邮件的通知会包含这封邮件的部分片段
 The notification for one email has a snippet of the email,
 
 17
@@ -100,7 +100,7 @@ and would show up as a card in the stream.
 
 21
 00:00:52,350 --> 00:00:55,050
-你可以在卡片上滑动  选择回复或者归档
+你可以在卡片上滑动来选择回复或归档
 You could swipe on the card to select reply or archive.
 
 22
@@ -115,12 +115,12 @@ would do exactly what it did when selected on the phone--
 
 24
 00:00:59,320 --> 00:01:01,420
-它能让你打开手机里的Gamil APP
+让你打开手机里的Gamil APP
 it would open up the Gmail app on your phone,
 
 25
 00:01:01,420 --> 00:01:02,900
-然后你可以输入回复
+然后输入回复内容
 so you could type a response.
 
 26
@@ -130,37 +130,37 @@ So the first thing we wanted to do
 
 27
 00:01:04,459 --> 00:01:06,310
-是允许人们通过快速的说话
+是允许人们说出快速的语音
 was to allow people to speak quick voice
 
 28
 00:01:06,310 --> 00:01:09,150
-对他们的手表进行回应  使他们可以直接通过手腕
+来回复他们的手表  使他们可以直接通过手腕
 replies to their watch so they can answer emails directly
 
 29
 00:01:09,150 --> 00:01:10,622
-来回复电子邮件
+回复电子邮件
 on their wrist.
 
 30
 00:01:10,622 --> 00:01:12,960
-现在的安卓通知API
+安卓的通知API现在可以
 The Android notification API now lets
 
 31
 00:01:12,960 --> 00:01:14,430
-可以让你利用一个远程输入
+给通知动作
 you annotate a notification action
 
 32
 00:01:14,430 --> 00:01:17,260
-来标注通知动作  告诉Android Wear
+添加一个远程输入  它告诉Android Wear
 with a remote input, which tells Android Wear that you'd
 
 33
 00:01:17,260 --> 00:01:20,070
-在执行动作之前  你需要通过语音收集
+在执行动作之前  你可能要通过语音收集
 like to collect a bit of free form text via speech
 
 34
@@ -190,97 +190,97 @@ and instead of firing the action immediately,
 
 39
 00:01:31,140 --> 00:01:34,820
-而是首先启动一个转录UI去收集说出的回复
+而是首先打开一个转录UI收集说出的回复内容
 it first launches a transcription UI to collect a spoken response.
 
 40
 00:01:34,820 --> 00:01:37,260
-然后将转化为文字的内容发送到Internet上
+在激活手机上的intent之前
 Then it puts the transcribed text into the intent,
 
 41
 00:01:37,260 --> 00:01:39,480
-然后转录文本的内容到手机上
+将转录文本发送到intent
 before firing the intent on the phone.
 
 42
 00:01:39,480 --> 00:01:41,427
-当Gmail启动然后看到这个文本
+当Gmail启动并发现这个文本
 When Gmail starts up and sees this text,
 
 43
 00:01:41,427 --> 00:01:43,760
-它会知道如何完成回复动作
+它会知道需要如何完成回复动作
 it knows that it has what it needs to complete the reply
 
 44
 00:01:43,760 --> 00:01:45,676
-然后它能够执行并发送邮件
+然后继续并发送邮件
 action, and it can go ahead and send the email
 
 45
 00:01:45,676 --> 00:01:48,740
-而不用打开任何手机上的UI
+而不用打开手机上的任何UI
 without bringing up any UI on the phone.
 
 46
 00:01:48,740 --> 00:01:52,180
-所以添加语音回复只需要2个小代码
+所以添加语音回复只需要稍微修改两处代码
 So adding voice replies just required two small code changes.
 
 47
 00:01:52,180 --> 00:01:55,330
-首先  改变回复行动去总括一个输入回复
+首先  改变回复动作以包含一个远程输入
 First, changing the reply action to include a remote input.
 
 48
 00:01:55,330 --> 00:01:57,290
-第二部  修改活动
+接着  修改从这个动作
 And second, modifying the activity
 
 49
 00:01:57,290 --> 00:01:59,140
-使他可以收到这一行动
+接收到的intent的activity
 that received the intent from this action,
 
 50
 00:01:59,140 --> 00:02:01,700
-去观察意图是否包含一个文本响应
+判断intent是否包含一个文本响应
 to see if the intent included a text response.
 
 51
 00:02:01,700 --> 00:02:03,730
-最酷的是通知
+最酷的是通知体验
 What's cool is that the notification experience
 
 52
 00:02:03,730 --> 00:02:04,964
-在手机上是不变的
+在手机上并没有改变
 on the phone is unchanged.
 
 53
 00:02:04,964 --> 00:02:07,380
-如果你选择在手机上回复通知
+如果你选择在手机通知栏中回复通知
 If you select the reply action on the phone's notification
 
 54
 00:02:07,380 --> 00:02:09,830
-Gmail重复同样的操作
+Gmail会启动同样的activity
 shade, Gmail starts the same activity.
 
 55
 00:02:09,830 --> 00:02:12,090
-但是由于远程输入窗口
+但是由于远程输入不密集
 But since the remote input isn't populated,
 
 56
 00:02:12,090 --> 00:02:16,710
-显示像往常一样让你输入一个响应
+它通常会显示Compose窗口让你输入一个回复
 it displays the Compose window as usual to let you type a response.
 
 57
 00:02:16,710 --> 00:02:19,050
-现在  我们来看看多个消息通知
+现在  我们来看看多个消息通知的情况
 Now, let's look at the multiple message notification,
 
 58
@@ -290,47 +290,47 @@ which uses the multi-line inbox style.
 
 59
 00:02:21,379 --> 00:02:23,420
-而不是把一堆短行文本挤在一张卡上
+在一个可拓展的设计中
 Instead of putting a bunch of short lines of text
 
 60
 00:02:23,420 --> 00:02:26,700
-我们需要每个邮件单独显示一张卡
+我们需要每个邮件单独显示一张卡片
 onto a single card, we wanted to have one card for each email,
 
 61
 00:02:26,700 --> 00:02:28,970
-在一个可拓展的堆栈
+而不是把一堆短行文本挤在一张卡片上
 in an expandable stack.
 
 62
 00:02:28,970 --> 00:02:31,760
-这些消息推送还有类似于栈的通知卡
+这些大量的通知卡片
 These bundles, or stacks of notification cards,
 
 63
 00:02:31,760 --> 00:02:34,080
-是一个消息API的新特性
+是通知API的一个新特性
 are a new feature in the notification API.
 
 64
 00:02:34,080 --> 00:02:35,600
-而不是只发一个通知
+不是将所有的电子邮件线程合并在一起
 Instead of posting one notification
 
 65
 00:02:35,600 --> 00:02:37,310
-将所有的电子邮件合并在一起
+发送一个通知
 with all of the email threads coalesced,
 
 66
 00:02:37,310 --> 00:02:40,060
-我们发布多个通知  每一个一个电子邮件
+而是我们发布多个通知  每一封电子邮件一个通知
 we post multiple notifications-- one per email.
 
 67
 00:02:40,060 --> 00:02:42,610
-但是所有的消息放在同一个关键组
+但是所有这些通知都具有相同的group key
 But all of these notifications are marked with the same group
 
 68
@@ -340,52 +340,52 @@ key, indicating that they're related,
 
 69
 00:02:44,520 --> 00:02:47,440
-然后它们应该被分组为卡包在可移动设备上
+然后它们在可穿戴设备上被组合为一个卡片包
 and they should be grouped as a card bundle on the Wearable.
 
 70
 00:02:47,440 --> 00:02:49,050
-现在  我们得到一个好的堆栈卡
+现在我们得到了一个不错的卡片集合
 Now we get a nice stack of cards,
 
 71
 00:02:49,050 --> 00:02:51,030
-你可以调出包
+你可以通过点击包来展开它们
 which you can fan out by tapping the bundle,
 
 72
 00:02:51,030 --> 00:02:52,419
-然后单独读每张卡
+然后分别阅读每张卡片
 and read the cards individually.
 
 73
 00:02:52,419 --> 00:02:54,210
-提示每张卡在包中
+注意到在包中的每个卡片
 Notice that each of the cards in the bundle
 
 74
 00:02:54,210 --> 00:02:56,320
-还可以有自己的动作
+可以有自己的动作
 can also have its own actions, so we can now
 
 75
 00:02:56,320 --> 00:02:59,390
-所以我们可以回复或者归档一组邮件
+所以我们可以在这一组中回复或归档单独的邮件
 reply to or archive a single email from within the group--
 
 76
 00:02:59,390 --> 00:03:02,370
-就像处理一个单独的邮件
+就像我们处理单独的邮件一样
 just as we did with a single email.
 
 77
 00:03:02,370 --> 00:03:04,487
-消息通知包同样有一个排序键
+通知集合还有一个sort key
 Notification bundles also have a sort key,
 
 78
 00:03:04,487 --> 00:03:07,690
-你可以设置控制卡消息的排序
+你可以通过设置来控制在包中的卡片的顺序
 which you can set to control the ordering of cards within the bundle.
 
 79
@@ -395,12 +395,12 @@ You can mark one notification in the bundle
 
 80
 00:03:09,490 --> 00:03:11,990
-作为一个总结的通知
+作为一个摘要通知
 as a summary notification, which is representative
 
 81
 00:03:11,990 --> 00:03:13,560
-这只是组中全部内容的代表
+它是整组通知的代表
 of the group as a whole.
 
 82
@@ -410,7 +410,7 @@ For Gmail, we flag the original inbox style notification
 
 83
 00:03:16,340 --> 00:03:17,610
-作为总结
+作为摘要
 as the summary.
 
 84
@@ -420,17 +420,17 @@ The summary notification is displayed
 
 85
 00:03:19,260 --> 00:03:20,804
-显示在电话通知的阴影中
+显示在手机通知栏中
 on the phone's notification shade.
 
 86
 00:03:20,804 --> 00:03:24,570
-没有没有总结内容的包是显示在可穿戴设备上的
+没有摘要的包是显示在可穿戴设备上的
 And the bundle without the summary is displayed on the Wearable.
 
 87
 00:03:24,570 --> 00:03:26,250
-接下来  然我们看看Hangouts
+接下来  让我们看看Hangouts
 Next, let's look at Hangouts.
 
 88
@@ -445,12 +445,12 @@ But we wanted to make some changes to fine tune
 
 90
 00:03:31,340 --> 00:03:33,820
-去增加安卓移动设备的体验感
+来增强安卓可穿戴设备的体验
 the experience for Android Wear devices.
 
 91
 00:03:33,820 --> 00:03:35,944
-和Gmail一样  我们想要声音的回答
+和Gmail一样  我们想要语音回复
 As with Gmail, we wanted voice replies.
 
 92
@@ -460,27 +460,27 @@ But the Hangouts notifications are a little bit different.
 
 93
 00:03:38,360 --> 00:03:41,520
-它们没有回复响应
+它们没有回复动作
 They don't have a reply action, just a content intent that
 
 94
 00:03:41,520 --> 00:03:43,880
-只是一个还有内容的意图去打开应用程序  所以你可以输入响应
+只有一个content intent打开应用程序  以使你可以输入回复内容
 opens up the app, so you can type a response.
 
 95
 00:03:43,880 --> 00:03:47,280
-这同一个可以穿戴的电话响应相同
+这在可穿戴设备上显示为一个手机的Open动作
 This shows up as an Open on Phone action on the Wearable.
 
 96
 00:03:47,280 --> 00:03:50,840
-幸运的是  现在的通知API允许您制定一个不同的设置
+幸运的是  现在的通知API允许您在手机和可穿戴设备中
 Fortunately, the notification API now lets you specify a distinct set
 
 97
 00:03:50,840 --> 00:03:52,530
-去设定手机和可穿戴设备的响应
+指定不同的动作集合
 of actions on phone and Wearable.
 
 98
@@ -490,17 +490,17 @@ The phone actions will only be displayed on the phone,
 
 99
 00:03:54,790 --> 00:03:57,640
-同样可穿戴设备的响应同样只会显示在可穿戴设备上
+同样可穿戴设备的动作只会显示在可穿戴设备上
 and the Wearable actions will only be displayed on the Wearable.
 
 100
 00:03:57,640 --> 00:03:59,510
-这就允许我们添加可穿戴设备仅产生回复响应
+这就允许我们添加一个可穿戴设备仅有的回复动作
 This allowed us to add a Wearable only reply
 
 101
 00:03:59,510 --> 00:04:02,360
-其中包括了远程输入
+包含一个远程输入
 action, which includes a remote input without changing
 
 102
@@ -510,27 +510,27 @@ the phone behavior.
 
 103
 00:04:04,360 --> 00:04:06,680
-Hangouts 同样使用另一个新的消息提醒功能
+Hangouts 同样使用另一个新的通知功能
 Hangouts also uses another new notification feature,
 
 104
 00:04:06,680 --> 00:04:08,210
-和消息页面
+即消息页面
 Notification Pages.
 
 105
 00:04:08,210 --> 00:04:10,600
-我们认为如果滑动页面
+我们认为这将很有用  如果在主消息卡片上
 We thought it would be useful if you could swipe sideways
 
 106
 00:04:10,600 --> 00:04:13,040
-在主消息栏上可以看到第二页
+滑动侧边栏  你可以在另一个页面
 on the main message card to see a second page
 
 107
 00:04:13,040 --> 00:04:15,640
-和最近的交流历史记录
+看到最近的历史对话记录
 with the recent conversation history.
 
 108
@@ -545,32 +545,32 @@ because you can just open the app to see the conversation history.
 
 110
 00:04:20,050 --> 00:04:22,900
-但是在可移动设备上  获得额外的上下文
+但是在可穿戴设备上  在回复之前
 But on the Wearable, it's nice to get a little extra context
 
 111
 00:04:22,900 --> 00:04:25,700
-在回复之前是很有必要的
+获得额外的上下文是很有必要的
 before speaking a response.
 
 112
 00:04:25,700 --> 00:04:27,700
-为了实现这个  我们使用了添加页面的方法作为可穿戴设备的扩展器
+为了实现这个功能  我们使用WearableExtentder的AddPage方法
 To do this, we use the Add Page method
 
 113
 00:04:27,700 --> 00:04:30,940
-它允许你添加额外的页面
+它允许你在主要的通知上
 of Wearable Extender, which allows you to add extra pages of content
 
 114
 00:04:30,940 --> 00:04:32,470
-在主要的通知上
+添加额外的内容页面
 on the primary notification.
 
 115
 00:04:32,470 --> 00:04:34,840
-我们把聊天记录做成第二大字体通知
+我们把chatHistory设置为第二个bigText style的通知
 We put the chat history into a second big text style
 
 116
@@ -580,12 +580,12 @@ notification, and add it to the primary notification as a second page.
 
 117
 00:04:39,020 --> 00:04:42,270
-再一次  消息通知在手机上并不变
+同样  通知体验在手机上并不会变
 Once again, the notification experience on the phone is unchanged.
 
 118
 00:04:42,270 --> 00:04:44,740
-但是在可移动设备上  我们得到了第二页的内容
+但是在可穿戴设备上  我们得到了第二页的内容
 But on the Wearable, we get the second page of content,
 
 119
@@ -595,7 +595,7 @@ showing the chat history.
 
 120
 00:04:46,690 --> 00:04:49,000
-这就是Hangouts的完整的例子关于可移动设备
+这就是Hangouts在可穿戴设备上的一个完整例子
 Here's a full example of Hangouts on the wearable.
 
 121
@@ -630,12 +630,12 @@ that would let you trigger a shutter release from your wrist.
 
 127
 00:05:04,552 --> 00:05:07,010
-你可以远程控制高端相机
+你可能见过具有远程控制功能的高端相机
 You've probably seen high end cameras with remote controls,
 
 128
 00:05:07,010 --> 00:05:08,297
-和这里的想法是相同的
+这里的想法是相同的
 and the idea here is the same.
 
 129
@@ -655,12 +655,12 @@ And then you capture a photo by tapping a button on your watch.
 
 132
 00:05:16,330 --> 00:05:18,840
-Gmail和Hangouts实现了集成
+对于Gmail和Hangouts  仅仅通过使用通知API
 With Gmail and Hangouts, we did entirely phone-side
 
 133
 00:05:18,840 --> 00:05:21,540
-仅仅通过通知API
+我们完全实现了手机端的集成
 integrations, using only the notification APIs.
 
 134
@@ -670,22 +670,22 @@ But for this use case, it made sense
 
 135
 00:05:23,200 --> 00:05:25,201
-制作一个可移动设备APP是有意义的
+制作一个可穿戴设备APP是有意义的
 to build a Wearable app for a couple of reasons.
 
 136
 00:05:25,201 --> 00:05:27,491
-首先  他不会对Camera APP投放消息
+首先  当全屏运行时  
 First, it wouldn't really make sense for the camera app
 
 137
 00:05:27,491 --> 00:05:29,520
-在手机上产生影响
+他不会对Camera APP投放消息
 to post notifications to the phone shade, when
 
 138
 00:05:29,520 --> 00:05:31,080
-他是全屏运行的
+在手机上产生影响
 it was already running full screen,
 
 139
@@ -700,27 +700,27 @@ had to be asymmetric.
 
 141
 00:05:34,390 --> 00:05:36,180
-同时  我们认为  对于这个例子
+我们也认为  对于这个例子
 Also, we thought that for this use case,
 
 142
 00:05:36,180 --> 00:05:38,620
-这将是合适的去接管整个屏幕通过可穿戴设备通过按钮
+通过可穿戴设备快门按钮接管整个屏幕是合适的
 it would be appropriate to take over the entire screen of the Wearable
 
 143
 00:05:38,620 --> 00:05:40,530
-而不是限制
+而不是在屏幕上限制
 with the shutter button, instead of confining
 
 144
 00:05:40,530 --> 00:05:44,220
-卡的按钮功能
+卡片的按钮功能
 the button to a card in the stream.
 
 145
 00:05:44,220 --> 00:05:46,557
-所以  我们建立了一个简单的应用程序来运行在可穿戴设备上
+所以  我们建立了一个简单的应用程序运行在可穿戴设备上
 So we built a simple app to run on the Wearable, that
 
 146
@@ -730,22 +730,22 @@ communicates with the main Camera app, using Google Play services.
 
 147
 00:05:49,722 --> 00:05:51,680
-当Camera APP准备好去拍照
+当Camera APP准备去拍照的时候
 When the Camera app is ready to take a picture,
 
 148
 00:05:51,680 --> 00:05:53,780
-他将收集数据
+它将设置一个dataItem
 it sets a data item, indicating that it's
 
 149
 00:05:53,780 --> 00:05:56,360
-表明他是准备接受远程快门的消息
+表明准备接受远程快门的消息
 ready to accept remote shutter messages.
 
 150
 00:05:56,360 --> 00:05:58,920
-这个数据物品是依靠智能手表的APP来实现读取
+这个数据项是由智能手表上的可穿戴设备APP的一个service来实现读取的
 This data item is read by a service within the Wearable app
 
 151
@@ -785,37 +785,37 @@ The Wearable reads the asset, and displays it full screen for preview.
 
 158
 00:06:16,500 --> 00:06:18,100
-这就是他最终看起来的效果
+这就是它最终看起来的效果
 Here's what it looks like end to end.
 
 159
 00:06:18,100 --> 00:06:20,620
-我在手机上打开Camera APP  然后看到一个写有字符串的名片
+我在手机上打开Camera APP  然后看到一个写有字符串的卡片
 I open the Camera app on my phone, and I see a string card.
 
 160
 00:06:20,620 --> 00:06:22,260
-我可以推出卡片到整个屏幕
+我可以轻触卡片启动一个
 I can tap the card to launch a full screen
 
 161
 00:06:22,260 --> 00:06:23,634
-依靠快门按钮来实现
+具有快门按钮的全屏activity
 activity with the shutter button.
 
 162
 00:06:23,634 --> 00:06:26,010
-我按下快门按钮  然后经过倒计时
+我轻敲快门按钮  然后经过倒计时后
 I tap the shutter button, and after a count down,
 
 163
 00:06:26,010 --> 00:06:28,970
-我的手机拍下来一张照片  然后可以在可移动设备上预览
+我的手机拍下来一张照片  并且可以在可移动设备上预览
 my phone takes a photo, and I see a preview on the Wearable.
 
 164
 00:06:28,970 --> 00:06:31,350
-yoooooo  还不错
+不错的自拍
 Not a bad selfie.
 
 165
@@ -830,7 +830,7 @@ During turn by turn navigation, we
 
 167
 00:06:34,890 --> 00:06:37,286
-我们想在手腕上展示方向
+我们想在手腕上显示方向
 wanted to show direction prompts on your wrist.
 
 168
@@ -850,27 +850,27 @@ and it could be more convenient to leave it in your pocket,
 
 171
 00:06:43,428 --> 00:06:45,650
-然后来靠你的手表来展示方向啦！！
+然后来靠你的手表来展示方向啦
 and refer to turn descriptions on your watch.
 
 172
 00:06:45,650 --> 00:06:47,400
-因为我们想要更加细致的空间控制
+因为我们想要在可穿戴设备的
 Because we wanted fine grained control
 
 173
 00:06:47,400 --> 00:06:49,650
-在布局和方向上
+布局和方向的表现上
 over the layout and the presentation of the directions
 
 174
 00:06:49,650 --> 00:06:51,220
-来显示在可移动设备上
+获得更加细粒度的控制
 displayed on the wearable, we decided
 
 175
 00:06:51,220 --> 00:06:54,100
-因此  我们打算制作谷歌地图穿戴APP
+我们决定制作谷歌地图穿戴APP
 to build the Google Maps Wear app, that rendered custom drawn
 
 176
@@ -885,12 +885,12 @@ We modified the Google Maps phone app
 
 178
 00:06:58,740 --> 00:07:01,090
-来更新对于数据项的描述
+来更新对于数据项的描述信息
 to update a data item with the description
 
 179
 00:07:01,090 --> 00:07:02,600
-信息  图标
+下一步机动动作图标
 and the icon for the next maneuver,
 
 180
@@ -905,7 +905,7 @@ The Maps Wear app listens for changes to this data item.
 
 182
 00:07:08,140 --> 00:07:10,260
-每次改变  他将重新阅读新数据
+每次改变  它将重新读取新数据
 With each change, it reads the new data,
 
 183
@@ -915,37 +915,37 @@ and updates the card on the Wearable.
 
 184
 00:07:12,780 --> 00:07:14,460
-为了更好的描述卡的内容
+为了绘制这张卡片
 To draw the card, the Wearable app
 
 185
 00:07:14,460 --> 00:07:17,590
-可穿戴设备APP使用了新的显示特征
+可穿戴设备APP使用了WearableExtender的新的displayIntent的功能
 uses the new display intent feature of Wearable Extender.
 
 186
 00:07:17,590 --> 00:07:19,820
-你指定显示的内容
+你指定一个activity来绘制
 You specify an activity to draw the content
 
 187
 00:07:19,820 --> 00:07:21,350
-通过消息推送卡
+通知卡片上的内容
 within a notification card.
 
 188
 00:07:21,350 --> 00:07:23,730
-这可以使你随心所欲的画上你想显示的内容在卡上
+这可以使你随心所欲的画上你想显示的内容在卡片上
 This lets us just draw whatever we wanted on the card,
 
 189
 00:07:23,730 --> 00:07:27,250
-而不是被唯一的消息推送内容所局限
+而不是被标准的通知样式所局限
 instead of being constrained to the standard notification styles.
 
 190
 00:07:27,250 --> 00:07:30,840
-卡在周围低功率模式下  或是峰值状态下
+卡片在周围低功率模式下  或是峰值状态下
 Cards in ambient low power mode, or in this peaking state,
 
 191
@@ -955,42 +955,42 @@ still have to use standard notification templates.
 
 192
 00:07:33,150 --> 00:07:35,450
-但是当你刷了一下卡成为了完整的试图
+但是当你轻触卡片进入到全屏视图后
 But when you swipe the card up into full view,
 
 193
 00:07:35,450 --> 00:07:37,980
-系统将会将改变色调的定制的试图
+系统将会改变色调进入自定义视图
 the system cross fades the card into a custom view,
 
 194
 00:07:37,980 --> 00:07:39,980
-放入你的视野中
+由自定义显示activity来绘制
 drawn by the custom display activity.
 
 195
 00:07:39,980 --> 00:07:41,480
-这个有些失败
+这个有些不爽的是
 It's a bit of a bummer that you have
 
 196
 00:07:41,480 --> 00:07:44,029
-当无论实在峰值模式还是环境模式都是用标准样式
+无论是在峰值模式还是环境模式都不得不使用标准样式
 to use standard styles in peak mode and in ambient mode,
 
 197
 00:07:44,029 --> 00:07:46,070
-但安卓穿戴设备将介绍一些新的可穿戴性
+但安卓穿戴设备引用了一些新的
 but Android Wear does introduce some new Wearable
 
 198
 00:07:46,070 --> 00:07:49,030
-具体通知模板  就像大的提醒风格
+可穿戴设备特定的通知模板  就像大的动作样式
 specific notification templates, like big action style
 
 199
 00:07:49,030 --> 00:07:50,950
-和内容图标风格
+和内容图标样式
 and content icon style.
 
 200
@@ -1000,1063 +1000,32 @@ One last feature.
 
 201
 00:07:52,100 --> 00:07:54,670
-我们同样也想让你开始一个导航绘画
+我们同样也想让你开始一个导航会话
 We also wanted to let you start a navigation session
 
 202
 00:07:54,670 --> 00:08:00,010
-通过一个声音命令  比如导航到蓝翔技校
+通过一个声音命令  比如导航到donuts公司
 by speaking a voice command, like navigate to donuts.
 
 203
 00:08:00,010 --> 00:08:02,380
-为了实现这个  地图穿戴应用需要
+为了实现这个  地图穿戴应用有一个activity
 To do this, the Maps Wear app has an activity
 
 204
 00:08:02,380 --> 00:08:05,410
-通过语意解读其将导航声音进行过滤
+它具有一个将导航声音动作过滤的intent filter
 with an intent filter for the navigate voice action, which
 
 205
 00:08:05,410 --> 00:08:07,470
-来创建这样一个意图
+就像这样来创建一个intent
 creates an intent like this.
 
 206
 00:08:07,470 --> 00:08:09,200
-穿戴式应用收到这个意图
-The Wear app receives this intent,
-
-207
-00:08:09,200 --> 00:08:11,4201
-00:00:00,500 --> 00:00:04,310
-嗨  我是Dan Aminzade,是安卓移动设备团队的攻城狮
-Hi, I'm Dan Aminzade, an engineer on the Android Wear team.
-
-2
-00:00:04,310 --> 00:00:07,570
-如果你有制作过安卓APP  你可能困惑关于
-If you build Android apps, you may be wondering how to update your app
-
-3
-00:00:07,570 --> 00:00:09,559
-如何更新你的APP使它能够更好地在移动设备上工作
-to work better on a wearable form factor.
-
-4
-00:00:09,559 --> 00:00:11,850
-为了给你你想要的更好的建议
-To give you a better idea of the changes you might want
-
-5
-00:00:11,850 --> 00:00:13,350
-在这个视频里  我会告诉你
-to make, in this talk, I'll tell you
-
-6
-00:00:13,350 --> 00:00:17,020
-我么你如何更新我们的谷歌APP使他们更好的支持安卓移动设备
-how we updated Google's own apps to better support Android Wear.
-
-7
-00:00:17,020 --> 00:00:18,570
-我会展示四款APP
-I'm going to focus on four apps that
-
-8
-00:00:18,570 --> 00:00:22,450
-去显示不同的安卓携带设备方面  他们分别是 Gmail
-showcase different aspects of the Android Wear API, Gmail,
-
-9
-00:00:22,450 --> 00:00:26,154
-Hangouts Camera Google Maps
-Hangouts, Camera and Google Maps.
-
-10
-00:00:26,154 --> 00:00:28,070
-每个APP展示了不同的方面
-Each of these apps illustrates a different set
-
-11
-00:00:28,070 --> 00:00:30,890
-关于安卓移动设备
-of features of the Android Wear API.
-
-12
-00:00:30,890 --> 00:00:32,240
-让我们从Gmail开始吧
-Let's start with Gmail.
-
-13
-00:00:32,240 --> 00:00:34,827
-Gmail生成两种类型的通知在你的手机上
-Gmail generates two types of notifications on your phone.
-
-14
-00:00:34,827 --> 00:00:36,910
-比如一个通知  当你收到一个电子邮件
-A notification like this, when you have one email.
-
-15
-00:00:36,910 --> 00:00:40,620
-又比如另一个更通知  当有多个未读邮件
-And a notification like this, when you have multiple unread emails.
-
-16
-00:00:40,620 --> 00:00:43,480
-收到一个电子邮件会通知电子邮件的部分内容
-The notification for one email has a snippet of the email,
-
-17
-00:00:43,480 --> 00:00:46,070
-并且给出2个动作：归档和回复
-and two actions; archive and reply.
-
-18
-00:00:46,070 --> 00:00:48,195
-不改变Gmail的情况下
-Without changing Gmail at all, the notification
-
-19
-00:00:48,195 --> 00:00:50,330
-消息会从手机推送到可移动设备上
-would be bridged from phone to wearable,
-
-20
-00:00:50,330 --> 00:00:52,350
-并且会显示为一个流动的卡
-and would show up as a card in the stream.
-
-21
-00:00:52,350 --> 00:00:55,050
-你可以滑动这个卡去选择是回复还是归档
-You could swipe on the card to select reply or archive.
-
-22
-00:00:55,050 --> 00:00:56,940
-现在的问题是回复动作是否能够
-The problem is that the reply action
-
-23
-00:00:56,940 --> 00:00:59,320
-操作如同操作手机一样
-would do exactly what it did when selected on the phone--
-
-24
-00:00:59,320 --> 00:01:01,420
-它能让你打开你手机里的Gamil APP
-it would open up the Gmail app on your phone,
-
-25
-00:01:01,420 --> 00:01:02,900
-然后你能够输入一个回复
-so you could type a response.
-
-26
-00:01:02,900 --> 00:01:04,459
-所以我们最想做的
-So the first thing we wanted to do
-
-27
-00:01:04,459 --> 00:01:06,310
-是允许人们能够快速的说话的同时
-was to allow people to speak quick voice
-
-28
-00:01:06,310 --> 00:01:09,150
-能够通过可移动设备进行直接回复
-replies to their watch so they can answer emails directly
-
-29
-00:01:09,150 --> 00:01:10,622
-通过手表
-on their wrist.
-
-30
-00:01:10,622 --> 00:01:12,960
-现在安卓通知API
-The Android notification API now lets
-
-31
-00:01:12,960 --> 00:01:14,430
-允许你标注通知行动
-you annotate a notification action
-
-32
-00:01:14,430 --> 00:01:17,260
-与远程输入  可以告诉你安卓设备
-with a remote input, which tells Android Wear that you'd
-
-33
-00:01:17,260 --> 00:01:20,070
-一些比较自由的语言输入
-like to collect a bit of free form text via speech
-
-34
-00:01:20,070 --> 00:01:21,820
-在展示行动之前
-before performing the action.
-
-35
-00:01:21,820 --> 00:01:23,650
-当我们建立一个Gmail通知
-When we build a notification in Gmail,
-
-36
-00:01:23,650 --> 00:01:27,210
-我们可以远程输入来完成回复
-we attach a remote input to the reply action.
-
-37
-00:01:27,210 --> 00:01:29,140
-安卓穿戴设备看到这个远程输入
-Android Wear sees this remote input,
-
-38
-00:01:29,140 --> 00:01:31,140
-可以替换为立即关闭这个行动
-and instead of firing the action immediately,
-
-39
-00:01:31,140 --> 00:01:34,820
-他首先启动一个转换UI去收集一个所说内容的回复
-it first launches a transcription UI to collect a spoken response.
-
-40
-00:01:34,820 --> 00:01:37,260
-然后将转化为文字的内容发送到Internet上
-Then it puts the transcribed text into the intent,
-
-41
-00:01:37,260 --> 00:01:39,480
-然后转录文本的内容到手机上
-before firing the intent on the phone.
-
-42
-00:01:39,480 --> 00:01:41,427
-当Gmail启动然后看到这个文本
-When Gmail starts up and sees this text,
-
-43
-00:01:41,427 --> 00:01:43,760
-它会知道如何完成回复动作
-it knows that it has what it needs to complete the reply
-
-44
-00:01:43,760 --> 00:01:45,676
-然后它能够执行并发送邮件
-action, and it can go ahead and send the email
-
-45
-00:01:45,676 --> 00:01:48,740
-而不用打开任何手机上的UI
-without bringing up any UI on the phone.
-
-46
-00:01:48,740 --> 00:01:52,180
-所以添加语音回复只需要2个小代码
-So adding voice replies just required two small code changes.
-
-47
-00:01:52,180 --> 00:01:55,330
-首先  改变回复行动去总括一个输入回复
-First, changing the reply action to include a remote input.
-
-48
-00:01:55,330 --> 00:01:57,290
-第二部  修改活动
-And second, modifying the activity
-
-49
-00:01:57,290 --> 00:01:59,140
-使他可以收到这一行动
-that received the intent from this action,
-
-50
-00:01:59,140 --> 00:02:01,700
-去观察意图是否包含一个文本响应
-to see if the intent included a text response.
-
-51
-00:02:01,700 --> 00:02:03,730
-最酷的是通知
-What's cool is that the notification experience
-
-52
-00:02:03,730 --> 00:02:04,964
-在手机上是不变的
-on the phone is unchanged.
-
-53
-00:02:04,964 --> 00:02:07,380
-如果你选择在手机上回复通知
-If you select the reply action on the phone's notification
-
-54
-00:02:07,380 --> 00:02:09,830
-Gmail重复同样的操作
-shade, Gmail starts the same activity.
-
-55
-00:02:09,830 --> 00:02:12,090
-但是由于远程输入窗口
-But since the remote input isn't populated,
-
-56
-00:02:12,090 --> 00:02:16,710
-显示像往常一样让你输入一个响应
-it displays the Compose window as usual to let you type a response.
-
-57
-00:02:16,710 --> 00:02:19,050
-现在  我们来看看多个消息通知
-Now, let's look at the multiple message notification,
-
-58
-00:02:19,050 --> 00:02:21,379
-它使用多行收件箱样式
-which uses the multi-line inbox style.
-
-59
-00:02:21,379 --> 00:02:23,420
-而不是把一堆短行文本挤在一张卡上
-Instead of putting a bunch of short lines of text
-
-60
-00:02:23,420 --> 00:02:26,700
-我们需要每个邮件单独显示一张卡
-onto a single card, we wanted to have one card for each email,
-
-61
-00:02:26,700 --> 00:02:28,970
-在一个可拓展的堆栈
-in an expandable stack.
-
-62
-00:02:28,970 --> 00:02:31,760
-这些消息推送还有类似于栈的通知卡
-These bundles, or stacks of notification cards,
-
-63
-00:02:31,760 --> 00:02:34,080
-是一个消息API的新特性
-are a new feature in the notification API.
-
-64
-00:02:34,080 --> 00:02:35,600
-而不是只发一个通知
-Instead of posting one notification
-
-65
-00:02:35,600 --> 00:02:37,310
-将所有的电子邮件合并在一起
-with all of the email threads coalesced,
-
-66
-00:02:37,310 --> 00:02:40,060
-我们发布多个通知  每一个一个电子邮件
-we post multiple notifications-- one per email.
-
-67
-00:02:40,060 --> 00:02:42,610
-但是所有的消息放在同一个关键组
-But all of these notifications are marked with the same group
-
-68
-00:02:42,610 --> 00:02:44,520
-以表明他们是相关的
-key, indicating that they're related,
-
-69
-00:02:44,520 --> 00:02:47,440
-然后它们应该被分组为卡包在可移动设备上
-and they should be grouped as a card bundle on the Wearable.
-
-70
-00:02:47,440 --> 00:02:49,050
-现在  我们得到一个好的堆栈卡
-Now we get a nice stack of cards,
-
-71
-00:02:49,050 --> 00:02:51,030
-你可以调出包
-which you can fan out by tapping the bundle,
-
-72
-00:02:51,030 --> 00:02:52,419
-然后单独读每张卡
-and read the cards individually.
-
-73
-00:02:52,419 --> 00:02:54,210
-提示每张卡在包中
-Notice that each of the cards in the bundle
-
-74
-00:02:54,210 --> 00:02:56,320
-还可以有自己的动作
-can also have its own actions, so we can now
-
-75
-00:02:56,320 --> 00:02:59,390
-所以我们可以回复或者归档一组邮件
-reply to or archive a single email from within the group--
-
-76
-00:02:59,390 --> 00:03:02,370
-就像处理一个单独的邮件
-just as we did with a single email.
-
-77
-00:03:02,370 --> 00:03:04,487
-消息通知包同样有一个排序键
-Notification bundles also have a sort key,
-
-78
-00:03:04,487 --> 00:03:07,690
-你可以设置控制卡消息的排序
-which you can set to control the ordering of cards within the bundle.
-
-79
-00:03:07,690 --> 00:03:09,490
-你可以标志包中的一个通知
-You can mark one notification in the bundle
-
-80
-00:03:09,490 --> 00:03:11,990
-作为一个总结的通知
-as a summary notification, which is representative
-
-81
-00:03:11,990 --> 00:03:13,560
-这只是组中全部内容的代表
-of the group as a whole.
-
-82
-00:03:13,560 --> 00:03:16,340
-对于Gmail  我们采用默认的原始收件箱样式通知
-For Gmail, we flag the original inbox style notification
-
-83
-00:03:16,340 --> 00:03:17,610
-作为总结
-as the summary.
-
-84
-00:03:17,610 --> 00:03:19,260
-摘要通知
-The summary notification is displayed
-
-85
-00:03:19,260 --> 00:03:20,804
-显示在电话通知的阴影中
-on the phone's notification shade.
-
-86
-00:03:20,804 --> 00:03:24,570
-没有没有总结内容的包是显示在可穿戴设备上的
-And the bundle without the summary is displayed on the Wearable.
-
-87
-00:03:24,570 --> 00:03:26,250
-接下来  然我们看看Hangouts
-Next, let's look at Hangouts.
-
-88
-00:03:26,250 --> 00:03:29,380
-Hangouts消息同样可以自动弥合在可穿戴设备上
-Hangouts messages are automatically bridged to the wearable too.
-
-89
-00:03:29,380 --> 00:03:31,340
-但是我们想要做些细微的改变
-But we wanted to make some changes to fine tune
-
-90
-00:03:31,340 --> 00:03:33,820
-去增加安卓移动设备的体验感
-the experience for Android Wear devices.
-
-91
-00:03:33,820 --> 00:03:35,944
-和Gmail一样  我们想要声音的回答
-As with Gmail, we wanted voice replies.
-
-92
-00:03:35,944 --> 00:03:38,360
-但是Hangouts的通知是有点不同的
-But the Hangouts notifications are a little bit different.
-
-93
-00:03:38,360 --> 00:03:41,520
-它们没有回复响应
-They don't have a reply action, just a content intent that
-
-94
-00:03:41,520 --> 00:03:43,880
-只是一个还有内容的意图去打开应用程序  所以你可以输入响应
-opens up the app, so you can type a response.
-
-95
-00:03:43,880 --> 00:03:47,280
-这同一个可以穿戴的电话响应相同
-This shows up as an Open on Phone action on the Wearable.
-
-96
-00:03:47,280 --> 00:03:50,840
-幸运的是  现在的通知API允许您制定一个不同的设置
-Fortunately, the notification API now lets you specify a distinct set
-
-97
-00:03:50,840 --> 00:03:52,530
-去设定手机和可穿戴设备的响应
-of actions on phone and Wearable.
-
-98
-00:03:52,530 --> 00:03:54,790
-手机动作仅仅会显示在手机上
-The phone actions will only be displayed on the phone,
-
-99
-00:03:54,790 --> 00:03:57,640
-同样可穿戴设备的响应同样只会显示在可穿戴设备上
-and the Wearable actions will only be displayed on the Wearable.
-
-100
-00:03:57,640 --> 00:03:59,510
-这就允许我们添加可穿戴设备仅产生回复响应
-This allowed us to add a Wearable only reply
-
-101
-00:03:59,510 --> 00:04:02,360
-其中包括了远程输入
-action, which includes a remote input without changing
-
-102
-00:04:02,360 --> 00:04:04,360
-却不改变手机的行为
-the phone behavior.
-
-103
-00:04:04,360 --> 00:04:06,680
-Hangouts 同样使用另一个新的消息提醒功能
-Hangouts also uses another new notification feature,
-
-104
-00:04:06,680 --> 00:04:08,210
-和消息页面
-Notification Pages.
-
-105
-00:04:08,210 --> 00:04:10,600
-我们认为如果滑动页面
-We thought it would be useful if you could swipe sideways
-
-106
-00:04:10,600 --> 00:04:13,040
-在主消息栏上可以看到第二页
-on the main message card to see a second page
-
-107
-00:04:13,040 --> 00:04:15,640
-和最近的交流历史记录
-with the recent conversation history.
-
-108
-00:04:15,640 --> 00:04:17,430
-这个不是手机非常必要的
-This isn't really necessary on the phone,
-
-109
-00:04:17,430 --> 00:04:20,050
-因为你可以打开APP去查看历史对话记录
-because you can just open the app to see the conversation history.
-
-110
-00:04:20,050 --> 00:04:22,900
-但是在可移动设备上  获得额外的上下文
-But on the Wearable, it's nice to get a little extra context
-
-111
-00:04:22,900 --> 00:04:25,700
-在回复之前是很有必要的
-before speaking a response.
-
-112
-00:04:25,700 --> 00:04:27,700
-为了实现这个  我们使用了添加页面的方法作为可穿戴设备的扩展器
-To do this, we use the Add Page method
-
-113
-00:04:27,700 --> 00:04:30,940
-它允许你添加额外的页面
-of Wearable Extender, which allows you to add extra pages of content
-
-114
-00:04:30,940 --> 00:04:32,470
-在主要的通知上
-on the primary notification.
-
-115
-00:04:32,470 --> 00:04:34,840
-我们把聊天记录做成第二大字体通知
-We put the chat history into a second big text style
-
-116
-00:04:34,840 --> 00:04:39,020
-并将它添加到主通知作为第二页
-notification, and add it to the primary notification as a second page.
-
-117
-00:04:39,020 --> 00:04:42,270
-再一次  消息通知在手机上并不变
-Once again, the notification experience on the phone is unchanged.
-
-118
-00:04:42,270 --> 00:04:44,740
-但是在可移动设备上  我们得到了第二页的内容
-But on the Wearable, we get the second page of content,
-
-119
-00:04:44,740 --> 00:04:46,690
-来展示聊天记录
-showing the chat history.
-
-120
-00:04:46,690 --> 00:04:49,000
-这就是Hangouts的完整的例子关于可移动设备
-Here's a full example of Hangouts on the wearable.
-
-121
-00:04:49,000 --> 00:04:52,240
-这是一个图片消息  一页仅仅是一个图片
-This is a picture message, with one page for just a photo, one
-
-122
-00:04:52,240 --> 00:04:54,790
-一页仅仅是聊天历史记录  和一个回复动作
-page with the chat history, and a reply action,
-
-123
-00:04:54,790 --> 00:04:58,160
-来记录一个快速的音频回复
-for recording a quick voice reply.
-
-124
-00:04:58,160 --> 00:04:59,550
-让我们来看Camera
-Let's move on to Camera.
-
-125
-00:04:59,550 --> 00:05:02,050
-我们想为谷歌摄像APP添加一个有趣的功能
-We wanted to add a fun little feature to Google's Camera app
-
-126
-00:05:02,050 --> 00:05:04,552
-这会让你从你的手腕触发快门
-that would let you trigger a shutter release from your wrist.
-
-127
-00:05:04,552 --> 00:05:07,010
-你可以远程控制高端相机
-You've probably seen high end cameras with remote controls,
-
-128
-00:05:07,010 --> 00:05:08,297
-和这里的想法是相同的
-and the idea here is the same.
-
-129
-00:05:08,297 --> 00:05:10,130
-你把你的手机放在三脚架上
-You put your phone on a tripod, or maybe you
-
-130
-00:05:10,130 --> 00:05:12,546
-或是你靠在墙的另一面  或者你让别人帮你拿着相机
-lean it against a wall, or you give it to someone to hold.
-
-131
-00:05:12,546 --> 00:05:16,330
-然后你通过按可移动设备上的按钮来触发照相
-And then you capture a photo by tapping a button on your watch.
-
-132
-00:05:16,330 --> 00:05:18,840
-Gmail和Hangouts实现了集成
-With Gmail and Hangouts, we did entirely phone-side
-
-133
-00:05:18,840 --> 00:05:21,540
-仅仅通过通知API
-integrations, using only the notification APIs.
-
-134
-00:05:21,540 --> 00:05:23,200
-但对于这个例子
-But for this use case, it made sense
-
-135
-00:05:23,200 --> 00:05:25,201
-制作一个可移动设备APP是有意义的
-to build a Wearable app for a couple of reasons.
-
-136
-00:05:25,201 --> 00:05:27,491
-首先  他不会对Camera APP投放消息
-First, it wouldn't really make sense for the camera app
-
-137
-00:05:27,491 --> 00:05:29,520
-在手机上产生影响
-to post notifications to the phone shade, when
-
-138
-00:05:29,520 --> 00:05:31,080
-他是全屏运行的
-it was already running full screen,
-
-139
-00:05:31,080 --> 00:05:33,496
-所以我们知道手机设备上的行为和可穿戴设备上的
-so we knew that the behavior on the phone and the wearable
-
-140
-00:05:33,496 --> 00:05:34,390
-是不对称的
-had to be asymmetric.
-
-141
-00:05:34,390 --> 00:05:36,180
-同时  我们认为  对于这个例子
-Also, we thought that for this use case,
-
-142
-00:05:36,180 --> 00:05:38,620
-这将是合适的去接管整个屏幕通过可穿戴设备通过按钮
-it would be appropriate to take over the entire screen of the Wearable
-
-143
-00:05:38,620 --> 00:05:40,530
-而不是限制
-with the shutter button, instead of confining
-
-144
-00:05:40,530 --> 00:05:44,220
-卡的按钮功能
-the button to a card in the stream.
-
-145
-00:05:44,220 --> 00:05:46,557
-所以  我们建立了一个简单的应用程序来运行在可穿戴设备上
-So we built a simple app to run on the Wearable, that
-
-146
-00:05:46,557 --> 00:05:49,722
-通过谷歌游戏服务来和主要的Camera APP沟通
-communicates with the main Camera app, using Google Play services.
-
-147
-00:05:49,722 --> 00:05:51,680
-当Camera APP准备好去拍照
-When the Camera app is ready to take a picture,
-
-148
-00:05:51,680 --> 00:05:53,780
-他将收集数据
-it sets a data item, indicating that it's
-
-149
-00:05:53,780 --> 00:05:56,360
-表明他是准备接受远程快门的消息
-ready to accept remote shutter messages.
-
-150
-00:05:56,360 --> 00:05:58,920
-这个数据物品是依靠智能手表的APP来实现读取
-This data item is read by a service within the Wearable app
-
-151
-00:05:58,920 --> 00:06:01,320
-它上面显示了快门键
-on the watch, which displays the shutter button.
-
-152
-00:06:01,320 --> 00:06:03,580
-按下按钮将发送消息给手机
-Tapping the button sends a message back to the phone
-
-153
-00:06:03,580 --> 00:06:05,400
-来触发快门
-to trigger shutter press.
-
-154
-00:06:05,400 --> 00:06:07,786
-最后  为了预览你刚刚拍摄的照片
-Finally, to preview the photo you just took,
-
-155
-00:06:07,786 --> 00:06:09,160
-手机应用程序创建了一个缩略图
-the phone app creates a thumbnail
-
-156
-00:06:09,160 --> 00:06:12,860
-并将其返回给手表仅作为一个存放数据的物品
-and sends it back across to the watch as an asset within a data item.
-
-157
-00:06:12,860 --> 00:06:16,500
-可穿戴设备读取内容  并全屏预览
-The Wearable reads the asset, and displays it full screen for preview.
-
-158
-00:06:16,500 --> 00:06:18,100
-这就是他最终看起来的效果
-Here's what it looks like end to end.
-
-159
-00:06:18,100 --> 00:06:20,620
-我在手机上打开Camera APP  然后看到一个写有字符串的名片
-I open the Camera app on my phone, and I see a string card.
-
-160
-00:06:20,620 --> 00:06:22,260
-我可以推出卡片到整个屏幕
-I can tap the card to launch a full screen
-
-161
-00:06:22,260 --> 00:06:23,634
-依靠快门按钮来实现
-activity with the shutter button.
-
-162
-00:06:23,634 --> 00:06:26,010
-我按下快门按钮  然后经过倒计时
-I tap the shutter button, and after a count down,
-
-163
-00:06:26,010 --> 00:06:28,970
-我的手机拍下来一张照片  然后可以在可移动设备上预览
-my phone takes a photo, and I see a preview on the Wearable.
-
-164
-00:06:28,970 --> 00:06:31,350
-yoooooo  还不错
-Not a bad selfie.
-
-165
-00:06:31,350 --> 00:06:33,180
-让我们来看谷歌地图
-Let's move on to Google Maps.
-
-166
-00:06:33,180 --> 00:06:34,890
-在语音导航时
-During turn by turn navigation, we
-
-167
-00:06:34,890 --> 00:06:37,286
-我们想在手腕上展示方向
-wanted to show direction prompts on your wrist.
-
-168
-00:06:37,286 --> 00:06:39,410
-这会在你走路时非常管用
-These can be especially useful when you're walking,
-
-169
-00:06:39,410 --> 00:06:40,970
-当你感到拿着你的手机很尴尬时
-since it's awkward holding up your phone,
-
-170
-00:06:40,970 --> 00:06:43,428
-现在你可以更方便的把手机丢在口袋里
-and it could be more convenient to leave it in your pocket,
-
-171
-00:06:43,428 --> 00:06:45,650
-然后来靠你的手表来展示方向啦！！
-and refer to turn descriptions on your watch.
-
-172
-00:06:45,650 --> 00:06:47,400
-因为我们想要更加细致的空间控制
-Because we wanted fine grained control
-
-173
-00:06:47,400 --> 00:06:49,650
-在布局和方向上
-over the layout and the presentation of the directions
-
-174
-00:06:49,650 --> 00:06:51,220
-来显示在可移动设备上
-displayed on the wearable, we decided
-
-175
-00:06:51,220 --> 00:06:54,100
-因此  我们打算制作谷歌地图穿戴APP
-to build the Google Maps Wear app, that rendered custom drawn
-
-176
-00:06:54,100 --> 00:06:56,930
-来呈现自定义信息而不是单纯的消息推送
-cards as local only notifications.
-
-177
-00:06:56,930 --> 00:06:58,740
-我们修改了谷歌地图手机应用程序
-We modified the Google Maps phone app
-
-178
-00:06:58,740 --> 00:07:01,090
-来更新对于数据项的描述
-to update a data item with the description
-
-179
-00:07:01,090 --> 00:07:02,600
-信息  图标
-and the icon for the next maneuver,
-
-180
-00:07:02,600 --> 00:07:04,980
-和导航状态信息
-and info about the navigation state.
-
-181
-00:07:04,980 --> 00:07:08,140
-地图穿戴APP监听数据项的变化
-The Maps Wear app listens for changes to this data item.
-
-182
-00:07:08,140 --> 00:07:10,260
-每次改变  他将重新阅读新数据
-With each change, it reads the new data,
-
-183
-00:07:10,260 --> 00:07:12,780
-然后更新卡上的数据到到移动设备上
-and updates the card on the Wearable.
-
-184
-00:07:12,780 --> 00:07:14,460
-为了更好的描述卡的内容
-To draw the card, the Wearable app
-
-185
-00:07:14,460 --> 00:07:17,590
-可穿戴设备APP使用了新的显示特征
-uses the new display intent feature of Wearable Extender.
-
-186
-00:07:17,590 --> 00:07:19,820
-你指定显示的内容
-You specify an activity to draw the content
-
-187
-00:07:19,820 --> 00:07:21,350
-通过消息推送卡
-within a notification card.
-
-188
-00:07:21,350 --> 00:07:23,730
-这可以使你随心所欲的画上你想显示的内容在卡上
-This lets us just draw whatever we wanted on the card,
-
-189
-00:07:23,730 --> 00:07:27,250
-而不是被唯一的消息推送内容所局限
-instead of being constrained to the standard notification styles.
-
-190
-00:07:27,250 --> 00:07:30,840
-卡在周围低功率模式下  或是峰值状态下
-Cards in ambient low power mode, or in this peaking state,
-
-191
-00:07:30,840 --> 00:07:33,150
-仍需要使用标准的通知模板
-still have to use standard notification templates.
-
-192
-00:07:33,150 --> 00:07:35,450
-但是当你刷了一下卡成为了完整的试图
-But when you swipe the card up into full view,
-
-193
-00:07:35,450 --> 00:07:37,980
-系统将会将改变色调的定制的试图
-the system cross fades the card into a custom view,
-
-194
-00:07:37,980 --> 00:07:39,980
-放入你的视野中
-drawn by the custom display activity.
-
-195
-00:07:39,980 --> 00:07:41,480
-这个有些失败
-It's a bit of a bummer that you have
-
-196
-00:07:41,480 --> 00:07:44,029
-当无论实在峰值模式还是环境模式都是用标准样式
-to use standard styles in peak mode and in ambient mode,
-
-197
-00:07:44,029 --> 00:07:46,070
-但安卓穿戴设备将介绍一些新的可穿戴性
-but Android Wear does introduce some new Wearable
-
-198
-00:07:46,070 --> 00:07:49,030
-具体通知模板  就像大的提醒风格
-specific notification templates, like big action style
-
-199
-00:07:49,030 --> 00:07:50,950
-和内容图标风格
-and content icon style.
-
-200
-00:07:50,950 --> 00:07:52,100
-最后一个特性
-One last feature.
-
-201
-00:07:52,100 --> 00:07:54,670
-我们同样也想让你开始一个导航绘画
-We also wanted to let you start a navigation session
-
-202
-00:07:54,670 --> 00:08:00,010
-通过一个声音命令  比如导航到蓝翔技校
-by speaking a voice command, like navigate to donuts.
-
-203
-00:08:00,010 --> 00:08:02,380
-为了实现这个  地图穿戴应用需要
-To do this, the Maps Wear app has an activity
-
-204
-00:08:02,380 --> 00:08:05,410
-通过语意解读其将导航声音进行过滤
-with an intent filter for the navigate voice action, which
-
-205
-00:08:05,410 --> 00:08:07,470
-来创建这样一个意图
-creates an intent like this.
-
-206
-00:08:07,470 --> 00:08:09,200
-穿戴式应用收到这个意图
+穿戴式应用收到这个intent
 The Wear app receives this intent,
 
 207
@@ -2071,7 +1040,7 @@ contains a destination, and a travel mode.
 
 209
 00:08:13,820 --> 00:08:15,940
-当手机低于应用收到这个消息
+手机地图应用收到这个消息
 The Maps phone app receives this message,
 
 210
@@ -2081,7 +1050,7 @@ and starts a navigation session to the destination.
 
 211
 00:08:18,160 --> 00:08:19,860
-然后你就可以出发了( ?? ω ?? )y
+然后你就可以出发了
 And off you go.
 
 212
@@ -2096,72 +1065,20 @@ Maps, all ready for Android Wear.
 
 214
 00:08:24,161 --> 00:08:25,910
-我希望他能给你一个很好的预览
+我希望它能给你一个很好的介绍关于
 I hope it gave you a good overview of what
 
 215
 00:08:25,910 --> 00:08:27,690
-来配合你的安卓携带设备平台
+你可以在安卓穿戴设备平台上做些什么
 you can do on the Android Wear platform.
 
 216
 00:08:27,690 --> 00:08:30,760
-我希望他能激发你定制自己的应用程序
+我希望它能激发你定制自己的应用程序
 And I hope it inspires you to customize your own application
 
 217
 00:08:30,760 --> 00:08:33,599
-来更好的支持可穿戴设备的体验o(*￣▽￣*)ブ
-to support a better wearable experience.
-并将一条消息发送给手机上的谷歌地图
-and sends a message to Google Maps on the phone that
-
-208
-00:08:11,420 --> 00:08:13,820
-包含一个目的地  与到达方式
-contains a destination, and a travel mode.
-
-209
-00:08:13,820 --> 00:08:15,940
-当手机低于应用收到这个消息
-The Maps phone app receives this message,
-
-210
-00:08:15,940 --> 00:08:18,160
-并开始一个导航会话到目的地
-and starts a navigation session to the destination.
-
-211
-00:08:18,160 --> 00:08:19,860
-然后你就可以出发了( ? ω ? )y
-And off you go.
-
-212
-00:08:19,860 --> 00:08:22,490
-这就是我们的Gmail Hangouts Camera 和谷歌地图
-That's how we made Gmail, Hangouts, Camera, and Google
-
-213
-00:08:22,490 --> 00:08:24,161
-都准备好了为安卓穿戴设备而奋斗
-Maps, all ready for Android Wear.
-
-214
-00:08:24,161 --> 00:08:25,910
-我希望他能给你一个很好的预览
-I hope it gave you a good overview of what
-
-215
-00:08:25,910 --> 00:08:27,690
-来配合你的安卓携带设备平台
-you can do on the Android Wear platform.
-
-216
-00:08:27,690 --> 00:08:30,760
-我希望他能激发你定制自己的应用程序
-And I hope it inspires you to customize your own application
-
-217
-00:08:30,760 --> 00:08:33,599
-来更好的支持可穿戴设备的体验o(*￣▽￣*)ブ
+来更好的支持可穿戴设备的体验
 to support a better wearable experience.
