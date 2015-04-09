@@ -35,7 +35,7 @@ I'm going to focus on four apps that
 
 8
 00:00:18,570 --> 00:00:22,450
-来展示使用Android Wear API开发的不同点  分别是 Gmail
+来展示使用Android Wear API进行开发的不同点  分别是 Gmail
 showcase different aspects of the Android Wear API, Gmail,
 
 9
@@ -135,7 +135,7 @@ was to allow people to speak quick voice
 
 28
 00:01:06,310 --> 00:01:09,150
-回复他们的手表  使他们可以直接通过手腕
+对他们的手表进行回应  使他们可以直接通过手腕
 replies to their watch so they can answer emails directly
 
 29
@@ -150,7 +150,7 @@ The Android notification API now lets
 
 31
 00:01:12,960 --> 00:01:14,430
-可以让你用一个远程输入
+可以让你利用一个远程输入
 you annotate a notification action
 
 32
@@ -160,7 +160,7 @@ with a remote input, which tells Android Wear that you'd
 
 33
 00:01:17,260 --> 00:01:20,070
-在执行动作之前  你可能要通过语音收集
+在执行动作之前  你需要通过语音收集
 like to collect a bit of free form text via speech
 
 34
