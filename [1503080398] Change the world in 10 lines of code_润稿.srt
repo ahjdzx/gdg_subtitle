@@ -1,0 +1,1261 @@
+﻿1
+00:00:00,484 --> 00:00:01,150
+WESLEY CHUN: Hi
+WESLEY CHUN: Hi.
+
+2
+00:00:01,150 --> 00:00:02,850
+我是Wesley Chun  来自Google
+This is Wesley Chun from Google.
+
+3
+00:00:02,850 --> 00:00:05,800
+你可能知道我是Python社区的成员
+You may know me as a longtime member of the Python community,
+
+4
+00:00:05,800 --> 00:00:08,080
+但是在这个视频中  我将要使用一些Python工具
+but in this episode, I'll try to actually use
+
+5
+00:00:08,080 --> 00:00:10,260
+向你展示如何用不到10行代码
+some of those skills to show you how you can change
+
+6
+00:00:10,260 --> 00:00:13,050
+创建一个面向全球的应用
+the world by building a globally accessible app starting
+
+7
+00:00:13,050 --> 00:00:14,930
+来改变世界
+with just 10 lines of code.
+
+8
+00:00:14,930 --> 00:00:18,960
+对的  我为你下一次创业出了个主意
+Yes, I'm giving you an idea for your next startup.
+
+9
+00:00:18,960 --> 00:00:21,720
+假设你想要做成一个非常成功的事业
+Assuming you want a wildly successful business,
+
+10
+00:00:21,720 --> 00:00:25,210
+推向市场的时间非常重要  你需要加快脚步
+time to market is of the essence, so you need to move quickly and use
+
+11
+00:00:25,210 --> 00:00:27,340
+并且使用工具尽快地发布你的产品
+tools that get your service out there sooner.
+
+12
+00:00:27,340 --> 00:00:30,470
+一种方式是从一个MVP（最小可行性产品）开始
+One idea is to come up with an MVP, or Minimally Viable
+
+13
+00:00:30,470 --> 00:00:33,120
+很快就能看见我们是否能够搭建一个web或者移动应用
+Product-- quickly to see whether we can build
+
+14
+00:00:33,120 --> 00:00:38,160
+当然之后这些都可以有
+a service without a web or mobile app, both of which can come later.
+
+15
+00:00:38,160 --> 00:00:40,870
+或者  你可以只是简单的做一个用户可以使用的
+Instead, we can simply create a bare bones service
+
+16
+00:00:40,870 --> 00:00:43,230
+原型产品
+that users can reach.
+
+17
+00:00:43,230 --> 00:00:44,810
+那我们该怎么做呢
+How are we going to do that?
+
+18
+00:00:44,810 --> 00:00:48,170
+有什么是每个人上网时都会用到的
+Well, what's one thing that everyone online has access to?
+
+19
+00:00:48,170 --> 00:00:49,990
+对了  电子邮件
+That's right-- email.
+
+20
+00:00:49,990 --> 00:00:52,760
+我们会从某个人或某台电脑收到邮件
+We've all got an email from a person or a computer,
+
+21
+00:00:52,760 --> 00:00:55,020
+你也会给别人发邮件
+and you've probably sent email to a person.
+
+22
+00:00:55,020 --> 00:00:57,602
+但是你发过邮件给一个电脑吗
+But have you ever sent email to a computer?
+
+23
+00:00:57,602 --> 00:00:59,060
+你待会就知道怎么实现了
+Well, you're going to learn it now,
+
+24
+00:00:59,060 --> 00:01:00,670
+因为这可以帮助你
+because that's what's allowing you
+
+25
+00:01:00,670 --> 00:01:03,850
+跳过第一版的原生实现
+to skip native implementation for V1, because email
+
+26
+00:01:03,850 --> 00:01:07,210、
+因为邮件服务在所有的设备上都是兼容的  不管是移动端  还是桌面端
+is compatible across all devices, mobile or desktop.
+
+27
+00:01:07,210 --> 00:01:08,710
+这也意味着我们只专注于
+This also means that we're looking
+
+28
+00:01:08,710 --> 00:01:12,830
+搭建一个能接收邮件的应用
+at building an app that receives email.
+
+29
+00:01:12,830 --> 00:01:16,070
+那为什么做一个接收邮件的应用是个好主意呢
+Now why is an app that receives email a big deal?
+
+30
+00:01:16,070 --> 00:01:20,180
+许多服务都发送email  但是这没什么意思
+Well, many services send email, but that's less interesting,
+
+31
+00:01:20,180 --> 00:01:22,440
+因为这只是一个简单的函数调用
+because it's just a single function call.
+
+32
+00:01:22,440 --> 00:01:26,620
+但是  接受并且处理这些信息的话
+Now being able to receive and process those messages, that's
+
+33
+00:01:26,620 --> 00:01:30,210
+这就有趣得多  而且非常带劲
+more intriguing, and as you can tell with the big bang here,
+
+34
+00:01:30,210 --> 00:01:32,260
+就像宇宙大爆炸一样
+I think much more powerful.
+
+35
+00:01:32,260 --> 00:01:34,690
+你的用户向你的应用发送邮件
+Your users email your service, and your app
+
+36
+00:01:34,690 --> 00:01:36,650
+你的应用响应这些请求
+responds to those requests.
+
+37
+00:01:36,650 --> 00:01:37,450
+想像一下
+Think about it.
+
+38
+00:01:37,450 --> 00:01:40,550
+你可以发送邮件给某个人
+You typically email a person, but can you just as easily
+
+39
+00:01:40,550 --> 00:01:42,060
+但是你能向某个应用发送邮件吗
+email an application?
+
+40
+00:01:42,060 --> 00:01:43,190
+当然
+Of course.
+
+41
+00:01:43,190 --> 00:01:45,010
+还有  用户并不需要下载一个应用
+On top of that, users don't really
+
+42
+00:01:45,010 --> 00:01:47,400
+因为他们的设备上
+need to download another app since email is already
+
+43
+00:01:47,400 --> 00:01:50,760
+已经有了邮件服务
+likely available on their devices.
+
+44
+00:01:50,760 --> 00:01:53,170
+通过允许用户向你的应用发送指令
+By allowing users to send commands to your service,
+
+45
+00:01:53,170 --> 00:01:55,940
+你就开启了无限的可能性
+you've opened up the door to many possibilities,
+
+46
+00:01:55,940 --> 00:01:59,000
+比如同步用户配置
+such as updating user settings, transferring money
+
+47
+00:01:59,000 --> 00:02:02,140
+向亲戚转账  订购药品
+to a relative, reordering all that prescription medicine,
+
+48
+00:02:02,140 --> 00:02:05,610
+淘点东西  或者开关家里或公司里的
+making a small purchase, or turning on or off the TV,
+
+49
+00:02:05,610 --> 00:02:07,990
+电视  炉子或者闹钟
+heater, or alarm at home or a business,
+
+50
+00:02:07,990 --> 00:02:11,330
+所有这些都通过发往你应用的
+all from an email message that's coded correctly and sent
+
+51
+00:02:11,330 --> 00:02:12,470
+正确填写的邮件信息实现
+to your service.
+
+52
+00:02:12,470 --> 00:02:15,832
+想像一下  先给你妈妈发邮件  然后向你的房子发邮件
+Imagine emailing your mom and then emailing your house,
+
+53
+00:02:15,832 --> 00:02:18,040
+让它把灯关了  因为你早上赶着去机场
+say to shut off the lights, because you left so early
+
+54
+00:02:18,040 --> 00:02:19,460
+for the airport this morning.
+
+55
+00:02:19,460 --> 00:02:21,230
+是不是很厉害
+Doesn't that sound crazy?
+
+56
+00:02:21,230 --> 00:02:24,100
+自动处理也是可以升级的
+Well, automated processing is also more scalable,
+
+57
+00:02:24,100 --> 00:02:27,330
+实现在很短的时间内同时处理成百上千的邮件
+enabling the ability to process hundreds or thousands of email
+
+58
+00:02:27,330 --> 00:02:29,670
+然后执行这些请求
+messages and performing service requests
+
+59
+00:02:29,670 --> 00:02:31,807
+in a very short period of time.
+
+60
+00:02:31,807 --> 00:02:33,640
+现在  这已经非常像一个 C/S 模型了
+Now, it's very much of a client server model
+
+61
+00:02:33,640 --> 00:02:35,640
+如果你熟悉的话
+if you're familiar with that.
+
+62
+00:02:35,640 --> 00:02:40,620
+话说回来  我们怎么才能通过10行以内的代码实现这些呢
+So anyway, how can we possibly do this in 10 lines of code?
+
+63
+00:02:40,620 --> 00:02:42,680
+有了GAE的帮助
+By leveraging Google App Engine, so you
+
+64
+00:02:42,680 --> 00:02:45,230
+你不需要了解硬件
+don't have to worry about things like the hardware,
+
+65
+00:02:45,230 --> 00:02:47,370
+操作系统  网络编程
+the operating system, network programming,
+
+66
+00:02:47,370 --> 00:02:50,650
+数据库  最重要的是  你甚至不需要了解email服务器
+databases, and most importantly, email servers.
+
+67
+00:02:50,650 --> 00:02:54,740
+同样的  Python能够让你用很少的代码实现很多的功能
+Similarly, Python lets you get a lot done with very few lines of code.
+
+68
+00:02:54,740 --> 00:02:58,140
+Python的语法非常简单  即使你不知道Python
+The syntax is pretty easy, so even if you don't know Python,
+
+69
+00:02:58,140 --> 00:03:01,290
+你也可以跟着指南做  然后
+you can still follow along in this tutorial and mentally map
+
+70
+00:03:01,290 --> 00:03:04,530
+用你喜欢的语言去实现
+to your favorite programming language.
+
+71
+00:03:04,530 --> 00:03:06,970
+还有  虽然这个视频是面向初学者的
+However, while this video is beginner-friendly,
+
+72
+00:03:06,970 --> 00:03:09,730
+但是我们不准备向你介绍如何在GAE上开发
+we're not going to introduce you to developing on App Engine,
+
+73
+00:03:09,730 --> 00:03:12,830
+所以如果你没接触过的话  去看网站上的新手指南
+so if you are new, just do the Getting Started tutorial
+
+74
+00:03:12,830 --> 00:03:14,570
+然后你就清楚了
+that's online, and you'll be set.
+
+75
+00:03:14,570 --> 00:03:17,370
+准备好了之后  创建一个Hello Worldd的app
+When you're ready, create a new Hello World app either
+
+76
+00:03:17,370 --> 00:03:20,400
+不管是用你下载GAE时的启动器
+using the Launcher UI that comes with App Engine when
+
+77
+00:03:20,400 --> 00:03:23,270
+还是从指南中复制的代码
+you download it or copy the code from the tutorial,
+
+78
+00:03:23,270 --> 00:03:25,660
+我们将从这儿开始
+because we're going to start from there.
+
+79
+00:03:25,660 --> 00:03:28,380
+我们只需要修改配置文件 app.yaml
+We only need to edit the app.yaml config
+
+80
+00:03:28,380 --> 00:03:33,830
+和主要的控制文件main.py
+file and the main main.py Python controller file.
+
+81
+00:03:33,830 --> 00:03:37,410
+不管你信不信  搭建这个app只需要几步而已
+Believe it or not, building this app only requires a few steps.
+
+82
+00:03:37,410 --> 00:03:39,680
+首先  创建模版应用
+One, create the skeleton app.
+
+83
+00:03:39,680 --> 00:03:40,480
+完成
+Done.
+
+84
+00:03:40,480 --> 00:03:42,900
+第二步  启用接收email
+Step two, enable receiving email.
+
+85
+00:03:42,900 --> 00:03:44,750
+只需要改下配置
+It's just a config change.
+
+86
+00:03:44,750 --> 00:03:48,180
+第三  导入email处理库
+Three, bring in the library code that supports email handling.
+
+87
+00:03:48,180 --> 00:03:52,340
+第四  添加调用这个库的代码
+Four, add the code that uses that library, and five,
+
+88
+00:03:52,340 --> 00:03:54,830
+最后  链接所有emai消息到那个
+route all inbound email messages to the handle
+
+89
+00:03:54,830 --> 00:03:58,240
+第四步中写的处理器上
+that you wrote in step four.
+
+90
+00:03:58,240 --> 00:04:00,000
+步骤二只是一个配置的修改  对吗
+Step two is just a config change, right?
+
+91
+00:04:00,000 --> 00:04:01,650
+所以  添加这两行红色的代码
+So add these two red lines of code
+
+92
+00:04:01,650 --> 00:04:04,640
+到你的配置文件app.yaml中
+that you see here to your app.yaml config file.
+
+93
+00:04:04,640 --> 00:04:06,770
+这是一个新的功能  入站服务
+It's a new section called Inbound Services,
+
+94
+00:04:06,770 --> 00:04:09,330
+在处理器功能之上运行
+and it goes right above the Handler section.
+
+95
+00:04:09,330 --> 00:04:11,860
+GAE提供许多入站服务
+App Engine supports several inbound services,
+
+96
+00:04:11,860 --> 00:04:13,990
+这里我们只关心email相关的
+but the one we care about is email.
+
+97
+00:04:13,990 --> 00:04:15,300
+这就是我们需要做的
+So that's what we do.
+
+98
+00:04:15,300 --> 00:04:17,310
+这样之后
+And that's it.
+
+99
+00:04:17,310 --> 00:04:19,550
+你的应用现在能够接收邮件
+Your app can now receive email.
+
+100
+00:04:19,550 --> 00:04:21,310
+其他的代码改动
+All the other code changes will take place
+
+101
+00:04:21,310 --> 00:04:26,200
+只涉及控制器  也就是main.py  现在我们看一下
+in the controller, which is main.py, so let's go there.
+
+102
+00:04:26,200 --> 00:04:28,290
+现在我们导入GAE中处理邮件的组件
+Now let's bring in the App Engine component
+
+103
+00:04:28,290 --> 00:04:29,754
+that handles receiving email.
+
+104
+00:04:29,754 --> 00:04:31,420
+对了  我们替换掉了文件顶部
+Oh, by the way, we took out the comments
+
+105
+00:04:31,420 --> 00:04:33,090
+自动生成的注释
+that were auto-generated at the top,
+
+106
+00:04:33,090 --> 00:04:35,040
+这样更便于看代码
+so that it's easier to see the code.
+
+107
+00:04:35,040 --> 00:04:38,500
+现在加上这两行红色的代码
+So now add these two red lines of code.
+
+108
+00:04:38,500 --> 00:04:40,350
+第一行是导入logging
+Line 1 is import logging.
+
+109
+00:04:40,350 --> 00:04:41,940
+我们在原型中要做的
+What we're doing in the prototype
+
+110
+00:04:41,940 --> 00:04:45,600
+就是记录下应用接收到的邮件信息的发送方
+is to log the senders of the email messages that our app receives.
+
+111
+00:04:45,600 --> 00:04:49,410
+当然你可以实现更多的功能  但是我们才刚开始
+Obviously, you can do more, but we're just getting started.
+
+112
+00:04:49,410 --> 00:04:52,870
+第三行导入了GAE处理邮件接收的代码
+Line 3 imports the App Engine code that handles the receipt of email,
+
+113
+00:04:52,870 --> 00:04:54,560
+这你应该能猜得出
+as you can probably guess.
+
+114
+00:04:54,560 --> 00:04:57,030
+那为什么按这样的顺序导入文件呢
+Well, why are the import lines in this order?
+
+115
+00:04:57,030 --> 00:04:59,340
+这是Python的推荐做法
+Well, it's a Python best practice.
+
+116
+00:04:59,340 --> 00:05:02,850
+像logging这样系统级的导入优先
+System imports like logging come first, followed by third party
+
+117
+00:05:02,850 --> 00:05:05,450
+其次是第三方库  比如这里的webapp2
+library codes, such as webapp2.
+
+118
+00:05:05,450 --> 00:05:09,530
+接下来是本地SDK工具  比如GAE的API
+Next are any local SDK Tools, such as the App Engine APIs,
+
+119
+00:05:09,530 --> 00:05:14,260
+最后  如果你要使用一些本地模块的话  这些最后导入
+and finally, if we had any local modules, those would go last.
+
+120
+00:05:14,260 --> 00:05:16,680
+现在  我们来处理收到的邮件
+Now let's handle incoming email.
+
+121
+00:05:16,680 --> 00:05:19,750
+这通过添加这个三行的控制类实现
+This is done by adding this three-line handler class.
+
+122
+00:05:19,750 --> 00:05:23,020
+这个receive方法提取发送方地址并打印它
+The receive method pulls out the sender's address and logs it.
+
+123
+00:05:23,020 --> 00:05:24,910
+你也可以获取其他的邮件属性
+Now there are other email message
+
+124
+00:05:24,910 --> 00:05:27,537
+因为为了改变世界
+attributes that you can access, because to change the world,
+
+125
+00:05:27,537 --> 00:05:29,120
+你要使用其他所有的东西
+you're going to have to use everything
+
+126
+00:05:29,120 --> 00:05:31,700
+比如邮件对象和内容
+else like the email subject and body
+
+127
+00:05:31,700 --> 00:05:35,240
+还有接收方和发送方的邮箱地址
+and the sender and receiver email addresses.
+
+128
+00:05:35,240 --> 00:05:38,350
+最后一步  重定向所有的入站邮件请求
+All right, the final step-- redirect all the inbound email
+
+129
+00:05:38,350 --> 00:05:40,970
+到那个我们刚刚添加的控制器上
+requests to the handler that we just added.
+
+130
+00:05:40,970 --> 00:05:42,900
+当别人访问你的应用时
+When someone points their browser at your app,
+
+131
+00:05:42,900 --> 00:05:45,970
+看见了Hello World  你觉得这是怎么实现的呢
+and sees Hello World, how do you think that actually happens?
+
+132
+00:05:45,970 --> 00:05:49,290
+第14行  它把发往首页的请求跳转到
+Line 14, it forwards the request for slash,
+
+133
+00:05:49,290 --> 00:05:53,270
+那个5~7行的MainHandler类
+which is your homepage, to the main handler on lines 5 through 7.
+
+134
+00:05:53,270 --> 00:05:56,270
+仔细看一下13~16行那个
+Think of the app variable on lines 13 through 16
+
+135
+00:05:56,270 --> 00:05:59,770
+作为转发表的应用变量
+as the dispatch table of where we forward requests.
+
+136
+00:05:59,770 --> 00:06:03,800
+每个路径都是（path-handle）这样二元组的形式
+Each route comes in the form of a path and handler 2-tuple
+
+137
+00:06:03,800 --> 00:06:06,630
+所以我们需要为进站邮件添加点东西
+so we need to add something similar for inbound email.
+
+138
+00:06:06,630 --> 00:06:08,790
+当GAE处理入站邮件
+When App Engine handles inbound email,
+
+139
+00:06:08,790 --> 00:06:11,630
+消息就会被发送到你的应用上的某个指定路径
+messages will be posted to your app at that special path,
+
+140
+00:06:11,630 --> 00:06:16,340
+也就是/_ah/mail/emailaddress这样的形式
+which is /_ah/mail/emailaddress.
+
+141
+00:06:16,340 --> 00:06:18,940
+既然我们要用同一个处理器处理这些邮件
+Since we're going to handle all emails with the same handler,
+
+142
+00:06:18,940 --> 00:06:20,980
+我们需要使用一个正则表达式
+we'll use a regular expression-- or regex--
+
+143
+00:06:20,980 --> 00:06:24,980
+匹配所有这样的地址  因此我们使用了(.+)
+matching all such addresses, hence why we have dot plus.
+
+144
+00:06:24,980 --> 00:06:26,810
+用于重定向到邮件处理器
+That redirects to email handler.
+
+145
+00:06:26,810 --> 00:06:29,400
+对了  别忘了第14行末尾的逗号
+Oh, by the way, don't forget that trailing comma
+
+146
+00:06:29,400 --> 00:06:32,690
+这也就是这行被标红的原因
+at the end of line 14, which is why it's kind of red too.
+
+147
+00:06:32,690 --> 00:06:34,730
+否则的话  就会报错
+Otherwise, you'll get a runtime error.
+
+148
+00:06:34,730 --> 00:06:36,940
+我刚刚帮你解决了一个面试问题
+Hey, I just helped you pass an interview question,
+
+149
+00:06:36,940 --> 00:06:39,250
+高兴去吧
+so feel good about it.
+
+150
+00:06:39,250 --> 00:06:40,310
+这就是全部要做的了
+And that's it.
+
+151
+00:06:40,310 --> 00:06:42,060
+不算导入语句和空行的话
+Ignoring the imports and blank lines,
+
+152
+00:06:42,060 --> 00:06:45,230
+我们只用差不多10行代码完成了所有工作
+we're left with about 10 lines of code that do all the work.
+
+153
+00:06:45,230 --> 00:06:47,470
+如果你非常严格
+Now if you're really pedantic and recognize
+
+154
+00:06:47,470 --> 00:06:50,111
+而且认为那个转发表只是一个简单的Python语句的话
+that the routing table is actually just one single Python
+
+155
+00:06:50,111 --> 00:06:52,110
+那么就只有7行了
+statement, well, you can cut that down to seven,
+
+156
+00:06:52,110 --> 00:06:54,570
+如果你只计算我们添加的代码的话
+and if you're only counting the number of lines that we added,
+
+157
+00:06:54,570 --> 00:06:55,590
+那么就只有6行了
+well, it's down to six.
+
+158
+00:06:55,590 --> 00:06:57,080
+天哪
+Amazing!
+
+159
+00:06:57,080 --> 00:07:00,690
+这就是一个完整的可以实现基本功能的应用了
+Believe it or not, this is a fully working app that does the basics.
+
+160
+00:07:00,690 --> 00:07:03,710
+我们没有创建一个web应用  除非你算上那个Hello World字符
+We don't have a web app, unless you count the Hello World bit,
+
+161
+00:07:03,710 --> 00:07:07,510
+我们也没有创建一个Android或者iOS移动客户端  对吗
+and neither did we create an Android or iOS mobile client, right?
+
+162
+00:07:07,510 --> 00:07:08,640
+但是你也可以去做
+But you could.
+
+163
+00:07:08,640 --> 00:07:11,570
+通过使用Google Cloud Endpoints
+And easily, by using Google Cloud Endpoints.
+
+164
+00:07:11,570 --> 00:07:14,420
+你可以点开上面的视频观看
+You can click on the video there and check it out.
+
+165
+00:07:14,420 --> 00:07:15,050
+好了
+All right.
+
+166
+00:07:15,050 --> 00:07:17,440
+现在我们启动它
+Now let's run it.
+
+167
+00:07:17,440 --> 00:07:20,532
+GAE的SDK自带了一个部署服务器  或开发服务器
+The App Engine SDK comes with a development server, or dev
+
+168
+00:07:20,532 --> 00:07:21,990
+你可以在把你的应用发布到Google上之前
+server, which lets you run your app
+
+169
+00:07:21,990 --> 00:07:25,160
+在本地运行调试它
+locally to test with before you deploy live to Google.
+
+170
+00:07:25,160 --> 00:07:28,830
+不管你是通过启动器  还是通过命令行
+When you do this by either clicking run on the launcher UI
+
+171
+00:07:28,830 --> 00:07:32,470
+在本地运行你的应用之前
+or using the command line tool, make sure, by the way,
+
+172
+00:07:32,470 --> 00:07:35,820
+请确保你已经记下了应用的端口号和管理员控制台的端口号
+that you note the port numbers for both the main app as well
+
+173
+00:07:35,820 --> 00:07:38,790
+因为我们都要用到
+as the admin console, because we're going to use both.
+
+174
+00:07:38,790 --> 00:07:42,670
+用你的浏览器访问localhost:8080
+Point your browser at the main app at local host 8080.
+
+175
+00:07:42,670 --> 00:07:47,070
+你就会看到控制器输出了Hello World
+You should see the main handler in action rendering Hello World.
+
+176
+00:07:47,070 --> 00:07:50,520
+因为我们在开发模式  所以你只能模拟发送邮件
+Since we're only in dev, you can only simulate sending email.
+
+177
+00:07:50,520 --> 00:07:54,920
+通过访问控制台的开发服务器
+And to do that, you need to get to the dev server admin console.
+
+178
+00:07:54,920 --> 00:07:59,730
+所以现在用别的端口（8000）访问你的浏览器
+So now point your browser at the other port, which is local host 8000.
+
+179
+00:07:59,730 --> 00:08:01,990
+到了这步
+Once you're there, what we really want
+
+180
+00:08:01,990 --> 00:08:05,550
+我们实际需要的就是左边栏里的入站邮件链接
+is the inbound mail link in the left nav, so click that.
+
+181
+00:08:05,550 --> 00:08:08,610
+点开它  你就会看到这个用来发送模拟邮件的表单
+You'll see this form to send a fake email with.
+
+182
+00:08:08,610 --> 00:08:11,940
+在这之前  我来说一下我们首先要发送的是什么
+Before we do that, let's talk about what we're sending first.
+
+183
+00:08:11,940 --> 00:08:14,340
+你要清楚你需要验证每一条邮件
+Recognize you're going to have to validate every message,
+
+184
+00:08:14,340 --> 00:08:16,964
+因为你需要确保每个请求都是真的
+because you're going to need to make sure that every request is
+
+185
+00:08:16,964 --> 00:08:20,150
+不是垃圾邮件  也不是虚假邮件
+real, not spam, not fake, and most importantly,
+
+186
+00:08:20,150 --> 00:08:23,360
+最重要的 不是被劫持的邮件
+not sent by someone on behalf of someone else.
+
+187
+00:08:23,360 --> 00:08:26,590
+这样的话  未认证用户发来的没有遵守你的服务条款的
+Invalid messages coming from unrecognized users that
+
+188
+00:08:26,590 --> 00:08:28,250
+非法邮件
+don't follow your security protocol
+
+189
+00:08:28,250 --> 00:08:31,170
+比如一个短语密码或者两个元素验证
+like a secret passphrase or two factor auth
+
+190
+00:08:31,170 --> 00:08:32,950
+或者只是没有正确构造的
+or just aren't structured correctly
+
+191
+00:08:32,950 --> 00:08:35,720
+就会被丢弃或者被记录下来
+can simply be dropped or logged as desired.
+
+192
+00:08:35,720 --> 00:08:37,440
+在这里的邮件正文中  你可以看见
+As you can see in the message body here,
+
+193
+00:08:37,440 --> 00:08:39,740
+我们有许多的工具可以用来达成这个目的
+we've got a lot of stuff that can be potentially used
+
+194
+00:08:39,740 --> 00:08:44,680
+如果我们在构建多个原型
+for this purpose if we were creating more than just a prototype.
+
+195
+00:08:44,680 --> 00:08:45,180
+好的
+All right.
+
+196
+00:08:45,180 --> 00:08:46,270
+业务逻辑就是这样
+Enough business logic.
+
+197
+00:08:46,270 --> 00:08:48,100
+下面我们讲一下发送邮件
+Let's talk about sending email.
+
+198
+00:08:48,100 --> 00:08:50,560
+GAE的应用会接收所有发送到
+So App Engine apps receive email sent to any address
+
+199
+00:08:50,560 --> 00:08:53,810
+xxx@APP_ID.appspotmail.com这样地址的邮件
+of the format xxx@APP_ID.appspotmail.com,
+
+200
+00:08:53,810 --> 00:08:57,950
+这里的xxx是收件人  你的应用ID就是主机名
+where xxx is a recipient, and your app ID is the host.
+
+201
+00:08:57,950 --> 00:09:02,576
+确保在域名中使用appspotmail而不是appspot.com
+Be sure to use appspotmail in the domain name rather than appspot.com.
+
+202
+00:09:02,576 --> 00:09:06,050
+在这个例子中  我们假装已经为我们的新闻小组
+In this demo, let's pretend I created this awesome service
+
+203
+00:09:06,050 --> 00:09:08,880
+创建了完善的服务  让他们能够
+for our press team, allowing them to issue new press
+
+204
+00:09:08,880 --> 00:09:11,060
+通过简单的命令发布新闻
+releases with a single command.
+
+205
+00:09:11,060 --> 00:09:14,060
+我们使用发布命令
+We're using the Publish command for the recipient.
+
+206
+00:09:14,060 --> 00:09:16,265
+接收邮件的是我们虚假的应用ID
+Receiving email is our fake app ID.
+
+207
+00:09:16,265 --> 00:09:18,140
+对了  这是我找到的的别人的应用
+By the way, that's really someone else's app,
+
+208
+00:09:18,140 --> 00:09:19,723
+所以在生产模式下
+so don't send anything there if you're
+
+209
+00:09:19,723 --> 00:09:21,641
+不要发送东西到那个地址
+going to run in production.
+
+210
+00:09:21,641 --> 00:09:23,390
+在开发模式中  这是没关系的
+It doesn't really matter in the dev server
+
+211
+00:09:23,390 --> 00:09:26,270
+因为实际上并没有邮件被发送
+as no emails are actually sent.
+
+212
+00:09:26,270 --> 00:09:30,670
+一旦你点击了发送  并且受到了请求成功的消息
+Once you click Send and see Request Succeeded message,
+
+213
+00:09:30,670 --> 00:09:33,900
+检查一下你的打印日志  确认一下你的处理器被调用了
+check your logs and verify that your handler was called.
+
+214
+00:09:33,900 --> 00:09:35,660
+点击启动器上的记录按钮
+Click the Logs button in the launcher
+
+215
+00:09:35,660 --> 00:09:38,940
+或者查看发送到控制台的命令行消息
+or check out the command line output sent to the console.
+
+216
+00:09:38,940 --> 00:09:40,700
+你会看到  已收到一条消息
+You should see Received a Message
+
+217
+00:09:40,700 --> 00:09:45,120
+来自那个你设置的虚拟地址
+From whatever fake sender address you used.
+
+218
+00:09:45,120 --> 00:09:48,430
+在生产模式下运行之前还需要做一些事情
+Running this live in production requires only a few more steps.
+
+219
+00:09:48,430 --> 00:09:50,590
+请确保你已经把那个唯一的ID
+Make sure you've got that unique ID plugged
+
+220
+00:09:50,590 --> 00:09:52,100
+配置在了app.yaml文件里
+into your app.yaml file.
+
+221
+00:09:52,100 --> 00:09:53,640
+然后去启动器  点击发布按钮
+Then go to the launcher, and click
+
+222
+00:09:53,640 --> 00:09:56,550
+你的代码就会在验证之后被发布到Google上
+Deploy to send your code to Google after authenticating.
+
+223
+00:09:56,550 --> 00:09:58,380
+也可以使用命令行工具
+Or you can also use the command line tool.
+
+224
+00:10:01,750 --> 00:10:03,900
+应用上线以后
+Once the app's uploaded, check that it's
+
+225
+00:10:03,900 --> 00:10:06,320
+你只需在浏览器中访问yourappID.appspot.com
+up by going to the Hello World page in the browser
+
+226
+00:10:06,320 --> 00:10:07,840
+看看是否有Hello World页面  确认是否已经生效
+just like we did for the dev server,
+
+227
+00:10:07,840 --> 00:10:09,881
+就像我们在开发服务器上做的一样
+only you'll be pointing at yourappID.appspot.com.
+
+228
+00:10:11,750 --> 00:10:15,640
+现在  打开你最喜欢的邮件客户端
+Now pull up your favorite, warm, cozy-up-by-the-fireplace email
+
+229
+00:10:15,640 --> 00:10:17,839
+向你的应用发送一条真正的邮件
+client to send a real email message to your app.
+
+230
+00:10:17,839 --> 00:10:23,255
+同样的  你需要发送到xxx@yourappid.appspotmail.com这样的地址
+Again, it should go to some xxx@yourappid.appspotmail.com.
+
+231
+00:10:23,850 --> 00:10:26,860
+然后去你在cloud.google.com/console上应用控制台
+After sending, go to your Apps Admin Console
+
+232
+00:10:26,860 --> 00:10:30,370
+选择你的应用
+at cloud.google.com/console, selecting your app,
+
+233
+00:10:30,370 --> 00:10:33,090
+点击左边栏上的App Engine
+and clicking App Engine in the left nav bar.
+
+234
+00:10:33,090 --> 00:10:36,230
+点击App Engine自菜单中  点击logs
+In the App Engine sub nav bar, click on logs.
+
+235
+00:10:36,230 --> 00:10:37,670
+你就会在屏幕中看到你想要的
+In the middle of the admin screen,
+
+236
+00:10:37,670 --> 00:10:41,410
+你的邮件处理器的
+you should see exactly what you wanted-- your email handler's
+
+237
+00:10:41,410 --> 00:10:42,860
+打印日志
+log message.
+
+238
+00:10:42,860 --> 00:10:44,820
+真棒
+Booyah!
+
+239
+00:10:44,820 --> 00:10:46,340
+我们接下来要做什么呢
+What do we do next?
+
+240
+00:10:46,340 --> 00:10:47,974
+如果你想跳过编码
+Well, if you want to skip the typing
+
+241
+00:10:47,974 --> 00:10:49,890
+直接看源码的话  点击这个链接
+and get straight to the source, click the link
+
+242
+00:10:49,890 --> 00:10:51,740
+下载压缩文件
+to download the zip file.
+
+243
+00:10:51,740 --> 00:10:54,340
+或者  你想要一步步实现的话
+If for some reason, you want a slower step-by-step,
+
+244
+00:10:54,340 --> 00:10:56,910
+在GAE的核心Python应用编程中
+a full treatment can be found in the Google App Engine
+
+245
+00:10:56,910 --> 00:10:59,970
+你可以找到一个手把手的教程
+chapter of Core Python Applications Programming.
+
+246
+00:10:59,970 --> 00:11:01,570
+总而言之
+Otherwise, that's it.
+
+247
+00:11:01,570 --> 00:11:04,450
+我们刚刚一起创建了一个GAE的Python应用
+We've just built a Python App Engine app together.
+
+248
+00:11:04,450 --> 00:11:05,860
+这个应用能够接收邮件
+It can receive email.
+
+249
+00:11:05,860 --> 00:11:08,400
+不到10行代码
+It's less than or equal to 10 lines of code.
+
+250
+00:11:08,400 --> 00:11:10,480
+现在轮到你改变世界了
+Now it's up to you to change the world.
+
+251
+00:11:10,480 --> 00:11:13,690
+说真的  你已经拥有了开启一个新的事业的素质了
+Seriously, you've got the makings of a new business here.
+
+252
+00:11:13,690 --> 00:11:16,960
+继续做吧  在Google云平台上走上人生巅峰
+Go out, and be successful on the Google Cloud Platform.
+
+253
+00:11:16,960 --> 00:11:19,140
+感谢收看
+Thanks for tuning in.
