@@ -1,0 +1,371 @@
+1
+00:00:00,437 --> 00:00:02,020
+作为一个应用开发者
+As an app developer,
+
+2
+00:00:02,020 --> 00:00:05,170
+有时候会忘记构建应用程序只是做了一半
+you may sometimes forget that building the app is only half
+
+3
+00:00:05,170 --> 00:00:06,200
+而已
+of the battle.
+
+4
+00:00:06,200 --> 00:00:08,160
+另一半则是推广安装
+The other half is driving installs
+
+5
+00:00:08,160 --> 00:00:11,090
+以及确保用户继续回来使用
+and making sure your users keep coming back.
+
+6
+00:00:11,090 --> 00:00:13,290
+但是  我们该如何做呢
+But how do we go about doing this?
+
+7
+00:00:13,290 --> 00:00:16,510
+可以设计和实现用户参与和用户增长吗
+Can engagement and user growth be designed and implemented
+
+8
+00:00:16,510 --> 00:00:19,110
+就像应用程序的任何其他组件那样
+much like any other component of your application?
+
+9
+00:00:19,110 --> 00:00:21,980
+答案是肯定的  可以使用Google的技术
+The answer is yes it can with the technology Google
+
+10
+00:00:21,980 --> 00:00:23,680
+来增强自己的应用程序
+uses to power its own apps.
+
+11
+00:00:23,680 --> 00:00:25,530
+举个例子
+Let's look at an example.
+
+12
+00:00:25,530 --> 00:00:29,310
+几年前  我和我的妻子去西班牙度假
+A few years ago, my wife and I went for a vacation to Spain.
+
+13
+00:00:29,310 --> 00:00:33,160
+我们度过了一段美好的时光  但我记得最清楚的是
+We had a wonderful time, but what I remember most vividly
+
+14
+00:00:33,160 --> 00:00:36,070
+我们在马拉加吃的一次美味的海鲜饭
+is an amazing paella we had in the city of Malaga.
+
+15
+00:00:36,070 --> 00:00:38,760
+所以今天  如果Google能够帮我
+So today, I would love it if Google could help me
+
+16
+00:00:38,760 --> 00:00:41,020
+做一份像那次那样的海鲜饭  我会非常乐意
+cook a paella just like that.
+
+17
+00:00:41,020 --> 00:00:43,120
+现在假设你是开发者
+Now suppose you, the developer, build
+
+18
+00:00:43,120 --> 00:00:45,780
+构建了一个应用程序
+an app that, in fact, contains the recipe
+
+19
+00:00:45,780 --> 00:00:48,030
+它包含了一份地道的马拉加海鲜饭的食谱
+for an authentic Malaga paella.
+
+20
+00:00:48,030 --> 00:00:49,870
+当我在Google上搜索时
+When I'm searching on Google, your app
+
+21
+00:00:49,870 --> 00:00:51,980
+你的应用是展现为搜索结果中的一个
+is presented as one of the search results
+
+22
+00:00:51,980 --> 00:00:53,810
+那么我可以立刻安装它
+so I can install it right away.
+
+23
+00:00:53,810 --> 00:00:56,350
+或者  如果我已经安装过这个应用
+Or, if I already have the app installed,
+
+24
+00:00:56,350 --> 00:00:59,510
+Google Search使用深层链接在你的应用中
+Google Search takes me directly to the recipe in your app
+
+25
+00:00:59,510 --> 00:01:01,009
+直接打开这份食谱
+using a deep link.
+
+26
+00:01:01,009 --> 00:01:01,009
+对的  就是这样
+That's right.
+
+27
+00:01:01,900 --> 00:01:03,930
+有了应用程序索引  Google可以帮助
+With app indexing, Google can help
+
+28
+00:01:03,930 --> 00:01:06,310
+用户发现应用程序里面的内容
+users discover content inside of your app
+
+29
+00:01:06,310 --> 00:01:08,280
+并直接进入到应用中
+and bring users wanting to make that tasty
+
+30
+00:01:08,280 --> 00:01:10,720
+让用户想要做出美味的海鲜饭
+paella direct into your app.
+
+31
+00:01:10,720 --> 00:01:13,410
+找到食谱后  是时候让食谱应用
+After finding the recipe, it is time for the recipe app
+
+32
+00:01:13,410 --> 00:01:14,800
+带我一步步走下去了
+to walk me through the steps.
+
+33
+00:01:14,800 --> 00:01:16,750
+由于做海鲜饭  我的双手被占用了
+Since my hands are occupied making the paella,
+
+34
+00:01:16,750 --> 00:01:19,239
+我可以说  OK  Google  并使用语音操作
+I can say, OK, Google, and use voice actions
+
+35
+00:01:19,239 --> 00:01:21,250
+将食谱调出来
+to invoke the recipe up.
+
+36
+00:01:21,250 --> 00:01:23,400
+通过语音操作  可以利用
+With voice actions, you can take the advantage
+
+37
+00:01:23,400 --> 00:01:25,890
+Google语音识别功能和自然语言理解技术
+of Google's speech recognition and natural language
+
+38
+00:01:25,890 --> 00:01:29,270
+无需编写大量的代码
+understanding technology without having to write a ton of code.
+
+39
+00:01:29,270 --> 00:01:31,270
+你从我们的烹饪例子中看到
+As you saw from our cooking example,
+
+40
+00:01:31,270 --> 00:01:33,459
+通过使用应用程序索引和语音操作
+you can go beyond traditional web search
+
+41
+00:01:33,459 --> 00:01:35,780
+可以超越传统的网页搜索
+by using app indexing and voice actions
+
+42
+00:01:35,780 --> 00:01:38,470
+为你的应用程序提供新的参与机会
+to provide new engagement opportunities for your app
+
+43
+00:01:38,470 --> 00:01:41,280
+和新的用户体验
+and offering new experiences for your users.
+
+44
+00:01:41,280 --> 00:01:43,610
+无论你是正在构建的应用是关于烹饪  旅游
+Whether you are building an app for cooking, travel,
+
+45
+00:01:43,610 --> 00:01:46,650
+或任何其他很酷的新的使用案例  请按照以下两个步骤 
+or any other cool new use case, follow these two steps
+
+46
+00:01:46,650 --> 00:01:48,400
+来与Google Search进行整合
+to integrate with Google Search.
+
+47
+00:01:48,400 --> 00:01:51,250
+首先  设置深层链接  使Google
+First, set up your deep links so that the Google
+
+48
+00:01:51,250 --> 00:01:54,130
+机器人可以像抓取网站一样抓取它们
+bot can crawl them much like it crawls websites.
+
+49
+00:01:54,130 --> 00:01:55,270
+什么是深层链接呢
+What are deep links?
+
+50
+00:01:55,270 --> 00:01:56,900
+想像它们是在你的移动应用程序中作为
+Think about them as a way to identify
+
+51
+00:01:56,900 --> 00:02:00,459
+识别一段特定的内容或功能的
+a specific piece of content or functionality inside
+
+52
+00:02:00,459 --> 00:02:01,959
+一种方式
+of your mobile application.
+
+53
+00:02:01,959 --> 00:02:04,500
+就像是网页中的网址一样  不过是针对应用程序的
+Much like web URLs, but for apps.
+
+54
+00:02:04,500 --> 00:02:06,120
+当你的应用程序支持了深层链接
+When your app supports deep linking,
+
+55
+00:02:06,120 --> 00:02:09,460
+你就可以通过使用应用程序索引进入Google的索引
+you can get into the Google index by using app indexing.
+
+56
+00:02:09,460 --> 00:02:11,300
+一旦你的应用程序存在Google的索引中
+Once your app is in the Google index,
+
+57
+00:02:11,300 --> 00:02:13,229
+第二步就是标注你的应用程序
+the second step is to annotate your app
+
+58
+00:02:13,229 --> 00:02:15,180
+来描述它能做什么
+to describe what it can do.
+
+59
+00:02:15,180 --> 00:02:17,849
+例如  你可以整合Google语音操作
+For example, you can integrate Google Voice actions
+
+60
+00:02:17,849 --> 00:02:22,370
+以暴露应用程序的功能  用户可以使用语音进行激活
+to expose app capabilities that users can activate with Voice.
+
+61
+00:02:22,370 --> 00:02:26,000
+使用应用索引API让Google理解你的应用程序的用法
+Let Google understand your apps usage with app indexing API
+
+62
+00:02:26,000 --> 00:02:28,099
+通过自动完成功能
+to enable re-engagement from the Google app
+
+63
+00:02:28,099 --> 00:02:29,680
+可以从Google应用重新接入
+through auto completion.
+
+64
+00:02:29,680 --> 00:02:33,259
+最终  对于一些诸如旅游和娱乐的使用案例
+Finally, for some use cases such as travel and entertainment,
+
+65
+00:02:33,259 --> 00:02:36,630
+你的电子邮件提醒可以以Google Now卡片的形式出现
+your email reminder can appear as a Google Now card providing
+
+66
+00:02:36,630 --> 00:02:39,069
+提供给用户丰富的信息
+the user with rich information that takes them back
+
+67
+00:02:39,069 --> 00:02:42,020
+使得他们返回到你的电子邮件  这里可以回到你的网站
+to your email where they can return to your site.
+
+68
+00:02:42,020 --> 00:02:44,120
+通过与Google Search的整合
+By integrating with Google Search,
+
+69
+00:02:44,120 --> 00:02:46,460
+你可以增加应用程序的安装
+you can increase app installs, drive engagement
+
+70
+00:02:46,460 --> 00:02:48,490
+在Google Search的结果中通过深层链接驱动用户参与
+through deep links in Google Search results,
+
+71
+00:02:48,490 --> 00:02:51,770
+并吸引用户使用语音操作这种很酷的新途径
+and engage users in cool new ways with Voice actions.
+
+72
+00:02:51,770 --> 00:02:53,949
+如果你喜欢这个海鲜饭的故事
+If you enjoyed the paella story, may I
+
+73
+00:02:53,949 --> 00:02:57,610
+我可以推荐一些伟大的示例代码作为甜点吗
+recommend some great sample code for dessert?
+
+74
+00:02:57,610 --> 00:03:00,474
+请到developers.google.com/search来开始吧
+To get started, go to developers.google.com/search.
+
+
