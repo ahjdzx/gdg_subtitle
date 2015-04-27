@@ -1,0 +1,699 @@
+1
+00:00:00,860 --> 00:00:02,860
+你可曾想过在Google Play上
+Have you ever wondered how some developers
+
+2
+00:00:02,860 --> 00:00:06,950
+开发者是如何构建出很棒的项目和公司
+build a great product and business on Google Play  
+
+3
+00:00:06,950 --> 00:00:08,850
+我是Serge Kassardjian
+My name is Serge Kassardjian.
+
+4
+00:00:08,850 --> 00:00:10,680
+在Google Play小组工作
+I work on the Google Play team.
+
+5
+00:00:10,680 --> 00:00:15,060
+我专注于Android生态系统的应用和游戏
+My focus is on apps and games for our Android ecosystem.
+
+6
+00:00:15,060 --> 00:00:18,680
+我讲告诉你如何在Play上开发一个成功的应用
+I'm going to tell you how to create a successful app in Play
+
+7
+00:00:18,680 --> 00:00:21,750
+并且教你如何应用独特的Android性能来做到这些
+and leverage unique Android features to do so.
+
+8
+00:00:21,750 --> 00:00:24,620
+我们小组齐心协力来创建良好的安卓体验
+My team works with our partners to build great experiences
+
+9
+00:00:24,620 --> 00:00:27,110
+让他们的内容安装在
+for Android that get their content distributed
+
+10
+00:00:27,110 --> 00:00:31,560
+全世界大量的安卓用户手机上
+to our large install base of Android users around the world.
+
+11
+00:00:31,560 --> 00:00:37,130
+我们想帮你的企业和品牌在Google Play上取得成功
+We want your business and brand to succeed on Google Play.
+
+12
+00:00:37,130 --> 00:00:39,250
+那么  你将在这里学到什么
+So what will you learn here  
+
+13
+00:00:39,250 --> 00:00:42,360
+我将向你展示如何在Play上创建一个成功的应用
+I will show you how to create a successful app in Play
+
+14
+00:00:42,360 --> 00:00:45,390
+以及充分利用Android独有的特性
+and leverage unique Android features to do so.
+
+15
+00:00:45,390 --> 00:00:47,960
+有很多不错的办法来体现价值
+There are a lot of great ways to unlock value
+
+16
+00:00:47,960 --> 00:00:50,350
+并成为一个成功的Android开发者
+and succeed as an Android developer.
+
+17
+00:00:50,350 --> 00:00:53,110
+我将帮你入门
+And I will help you get started doing so.
+
+18
+00:00:53,110 --> 00:00:56,540
+我将向你展示怎么做和为什么要这么做
+I'm going to show you how and why to do this,
+
+19
+00:00:56,540 --> 00:00:59,570
+向你的品牌和企业展示它的重要性
+demonstrating its importance to your brand and business.
+
+20
+00:00:59,570 --> 00:01:01,800
+我也将向你展示有趣的Android方面的知识
+I'll also show you some interesting Android related
+
+21
+00:01:01,800 --> 00:01:06,010
+以及一些你可能不了解的产品特性
+facts as well product features you may not be aware of.
+
+22
+00:01:06,010 --> 00:01:08,510
+Google Play是一个很好的地方来壮大你的企业
+Google Play is a great place to grow your business,
+
+23
+00:01:08,510 --> 00:01:10,480
+特别当你做对了的时候
+especially if you do it the right way.
+
+24
+00:01:10,480 --> 00:01:12,770
+这个平台正在迅速发展
+The platform is growing very quickly
+
+25
+00:01:12,770 --> 00:01:15,160
+随着我们受众在这个商店中
+as is our engaged audience interacting
+
+26
+00:01:15,160 --> 00:01:17,640
+通过应用和游戏的互动
+with the apps and games in the store.
+
+27
+00:01:17,640 --> 00:01:20,260
+我们现在有超过500亿的下载量
+We currently have over 50 billion downloads,
+
+28
+00:01:20,260 --> 00:01:22,940
+并且每个月有超过20亿的下载量
+with over 2 billion downloads coming every month,
+
+29
+00:01:22,940 --> 00:01:26,080
+与2012年相比  在2013年我们支付给开发者的钱
+and we've paid out more than 4x as much money to developers
+
+30
+00:01:26,080 --> 00:01:31,110
+是原来的4倍以上
+in 2013 as we did compared to 2012.
+
+31
+00:01:31,110 --> 00:01:34,340
+Google Play同时提供了一个独特的迭代环境
+Play also provides a unique iterative environment
+
+32
+00:01:34,340 --> 00:01:37,810
+对于开发者允许A/B测试
+for our developers that allows them to A/B test
+
+33
+00:01:37,810 --> 00:01:44,290
+有了这样一个特性  alpha和beta测试以后再发布
+using such features as alpha and beta testing and staged roll outs.
+
+34
+00:01:44,290 --> 00:01:48,520
+此外  开发者可以利用其他形式的特性
+Further, developers can take advantage of other form factors
+
+35
+00:01:48,520 --> 00:01:51,220
+通过其他的渠道推动参与
+that will drive engagement through new channels
+
+36
+00:01:51,220 --> 00:01:55,280
+比如平板  穿戴式设备或者其他
+and touch points such as tablets, wearables, and others.
+
+37
+00:01:55,280 --> 00:01:59,390
+这是一个很棒的方式来给你的应用进行新的测试
+This is an awesome way to drive new use cases for your app that
+
+38
+00:01:59,390 --> 00:02:03,220
+之前是行不通的  如果你的应用是只在智能手机上跑
+previously were not available when you were on smartphones only.
+
+39
+00:02:03,220 --> 00:02:06,740
+Play不仅让你利用我们庞大的用户
+Play will not only allow you to leverage our gigantic audience,
+
+40
+00:02:06,740 --> 00:02:11,800
+同时也利用新的功能使用你的内容
+but also take advantage of new functionality using your content.
+
+41
+00:02:11,800 --> 00:02:14,180
+我们生活在一个日益全球化的世界
+We are living in an increasingly global world,
+
+42
+00:02:14,180 --> 00:02:18,090
+每个企业和应用都将变得国际化
+and every business and app is becoming an international one.
+
+43
+00:02:18,090 --> 00:02:20,990
+你的全球化战略是什么
+What is your strategy across the globe  
+
+44
+00:02:20,990 --> 00:02:23,820
+Google Play和Android是一个很好的机会
+Google Play and Android is an opportunity
+
+45
+00:02:23,820 --> 00:02:27,060
+来打开这个大门  通过在各种不同的市场上
+to unlock this through our distribution and strengths
+
+46
+00:02:27,060 --> 00:02:30,940
+我们的发行量之大和力量增长之快
+in various markets that are large and growing quickly
+
+47
+00:02:30,940 --> 00:02:32,800
+你可以在这里看到
+as you can see here.
+
+48
+00:02:32,800 --> 00:02:35,650
+我的合作伙伴比如JackThreads和Noom
+Partners such as JackThreads and Noom
+
+49
+00:02:35,650 --> 00:02:38,950
+都用这个工具来扩展国际用户
+all use tools to grow international numbers.
+
+50
+00:02:38,950 --> 00:02:44,420
+事实上2/3的Play上的购买都是跨国的
+In fact, 2/3 of all Play purchases actually happen internationally.
+
+51
+00:02:44,420 --> 00:02:48,012
+并且我们强烈鼓励我们的开发者利用好这一点
+And we strongly encourage our developers to take advantage of this.
+
+52
+00:02:48,012 --> 00:02:50,310
+这个庞大的国际组织
+This large international community
+
+53
+00:02:50,310 --> 00:02:53,430
+包括了200多个国家能从中下载内容
+includes 200 plus countries that can download from the Play
+
+54
+00:02:53,430 --> 00:02:57,800
+在130多个消费者市场
+store at 130 plus buyer markets.
+
+55
+00:02:57,800 --> 00:03:00,380
+为了能利用好这个大好机会
+To take advantage of this big opportunity,
+
+56
+00:03:00,380 --> 00:03:02,780
+用我们的工具来实现国际化
+use our tools for internationalization
+
+57
+00:03:02,780 --> 00:03:06,280
+以及语言翻译来实现从国家到国家
+and language translation to help make shifting from country
+
+58
+00:03:06,280 --> 00:03:10,110
+和s语言到语言的转换都很容易
+to country and language to language very easy.
+
+59
+00:03:10,110 --> 00:03:12,750
+用户更能被你的应用所吸引
+Users will feel a lot more attached to your app
+
+60
+00:03:12,750 --> 00:03:16,520
+如果这让他感到熟悉而非陌生
+if it feels familiar and not so foreign.
+
+61
+00:03:16,520 --> 00:03:19,600
+此外  一些你不在的特定的国家
+Further, identify countries that you are not
+
+62
+00:03:19,600 --> 00:03:23,300
+也将是潜在的Android和Play的巨大市场
+in that are potentially great markets for Android and Play.
+
+63
+00:03:23,300 --> 00:03:25,545
+你可以看到意料之外的道路上的问题
+You can see unexpected spikes of traffic
+
+64
+00:03:25,545 --> 00:03:28,320
+在那些你已经开始运作的国家里
+in countries that you've activated,
+
+65
+00:03:28,320 --> 00:03:31,030
+然后你开始关注那些与Android和Play大市场
+and start focusing on those markets, which
+
+66
+00:03:31,030 --> 00:03:35,760
+一致的市场
+coincide with the big markets for Android and Play.
+
+67
+00:03:35,760 --> 00:03:38,430
+接下来你要考虑的事情是设计
+The next thing to look at is design.
+
+68
+00:03:38,430 --> 00:03:42,480
+我无法表述好的视觉设计
+I can't express the importance of good visual design
+
+69
+00:03:42,480 --> 00:03:44,110
+和交互模式的重要性
+and interaction patterns.
+
+70
+00:03:44,110 --> 00:03:46,590
+设计  设计  还是设计
+Design, design, design.
+
+71
+00:03:46,590 --> 00:03:49,150
+打造一个好用的Android设计
+Make a strong Android Design.
+
+72
+00:03:49,150 --> 00:03:51,180
+它能颠覆一切
+It changes everything.
+
+73
+00:03:51,180 --> 00:03:53,230
+人们喜欢好看的应用
+People love great looking apps.
+
+74
+00:03:53,230 --> 00:03:55,470
+这是你品牌的延伸
+It's your extension of your brand.
+
+75
+00:03:55,470 --> 00:03:59,360
+纯粹的Android设计使你与你的用户用一种
+Pure Android Design makes you speak to the audience in a way
+
+76
+00:03:59,360 --> 00:04:02,060
+设备交互的方式对话
+that they are used to interacting with their device.
+
+77
+00:04:02,060 --> 00:04:06,410
+这会改进你的内容的表达  并且把最合适的内容放在最前面
+It will improve conversion and bring your right content to the front.
+
+78
+00:04:06,410 --> 00:04:10,890
+好的设计的应用就是好用的应用
+Great Design apps are great performing apps.
+
+79
+00:04:10,890 --> 00:04:13,530
+那么  设计为什么以及怎么起作用的呢
+So why and how does Design help  
+
+80
+00:04:13,530 --> 00:04:16,500
+当然  质量永远是第一位的
+Well, quality wins every time.
+
+81
+00:04:16,500 --> 00:04:18,690
+我们的研究人员展示了
+Our researchers have shown that users
+
+82
+00:04:18,690 --> 00:04:21,690
+用户愿意给更好的质量付费
+are willing to pay more for better quality.
+
+83
+00:04:21,690 --> 00:04:24,030
+通过使用我们的Android设计指南
+By using our Android Design guidelines,
+
+84
+00:04:24,030 --> 00:04:27,420
+比如我们标准的动作栏  下拉菜单  标签
+such as our standard action bar, drawer, and tabs,
+
+85
+00:04:27,420 --> 00:04:29,170
+你可以创建一个环境
+you can create an environment that people
+
+86
+00:04:29,170 --> 00:04:31,080
+让用户能花更多的时间或钱  觉得
+will spend more and feel like it's
+
+87
+00:04:31,080 --> 00:04:33,680
+这是你的内容最好的表达方式
+the primary channel for your content.
+
+88
+00:04:33,680 --> 00:04:37,160
+正如你所见的  当你的评分星级上升时
+As you can see here, as your star rating improves,
+
+89
+00:04:37,160 --> 00:04:39,930
+你的用户更愿意付钱
+so does consumer's willingness to pay.
+
+90
+00:04:39,930 --> 00:04:43,720
+我们看到一个巨大的人均消费量的增长
+We see a dramatic increase in monetization per user
+
+91
+00:04:43,720 --> 00:04:48,260
+随着星级从一星到五星
+as ratings move from one to five stars.
+
+92
+00:04:48,260 --> 00:04:53,970
+此外  平板优化强调  大小  质量  和消费
+Further, tablet optimization emphasizes sizes quality and purchases.
+
+93
+00:04:53,970 --> 00:04:57,150
+和手机端比较  我们能看到在平板上有1.7倍的购买率
+Compared to phones, we've seen a 1.7 next purchase
+
+94
+00:04:57,150 --> 00:04:58,960
+rate on tablets.
+
+95
+00:04:58,960 --> 00:05:02,050
+同时  我们继续让你的客户更方便的购买
+Also, we continue to make it much easier
+
+96
+00:05:02,050 --> 00:05:06,210
+随着我们对支付方式支持的增长
+for your customers to pay as we increase our forms of payment.
+
+97
+00:05:06,210 --> 00:05:08,810
+举个栗子  直接的账单购买
+For example, direct carrier billing
+
+98
+00:05:08,810 --> 00:05:13,250
+支持超过50%的用户数量。
+is now available for over 50% of Play users.
+
+99
+00:05:13,250 --> 00:05:17,310
+别忘了  你可以回应所有评论
+And don't forget, you can respond to all your reviewers.
+
+100
+00:05:17,310 --> 00:05:21,400
+与用户交流来提升你的星级以改良应用
+Talk to your audience to get your ratings up and improve your app.
+
+101
+00:05:21,400 --> 00:05:23,770
+随着用户看到你与他们互动
+As your audience sees you interacting with them
+
+102
+00:05:23,770 --> 00:05:25,960
+并且对他们的需求上投资
+and invested in their needs, they'll
+
+103
+00:05:25,960 --> 00:05:28,340
+他们会给出有价值的反馈
+provide valuable feedback and consider
+
+104
+00:05:28,340 --> 00:05:31,680
+并且考虑基于你的改变来改变他们的评论
+changing their review based on your changes.
+
+105
+00:05:31,680 --> 00:05:33,770
+这不光帮你提升了你的应用质量
+Not only does this help you improve your app,
+
+106
+00:05:33,770 --> 00:05:36,130
+也最终帮助改良了这个社区
+but ultimately helps improve the community
+
+107
+00:05:36,130 --> 00:05:39,110
+中你的应用和用户对你公司感觉的互动
+of interacting around your app and their feelings
+
+108
+00:05:39,110 --> 00:05:41,680
+towards your company.
+
+109
+00:05:41,680 --> 00:05:45,840
+别忘了  合适的大小也起着重要的作用
+And don't forget-- sizing correctly makes a big difference.
+
+110
+00:05:45,840 --> 00:05:48,280
+你的应用越小
+The smaller your app, the less likely people
+
+111
+00:05:48,280 --> 00:05:51,840
+用户越不容易删掉它  并且也更愿意下载它
+will uninstall it, and more likely they will to download it.
+
+112
+00:05:51,840 --> 00:05:53,660
+人们期待这样的东西
+People look for this stuff.
+
+113
+00:05:53,660 --> 00:05:55,760
+他们不想应用吞食他们的内存空间
+They don't want apps that eat up their memory
+
+114
+00:05:55,760 --> 00:05:57,630
+耗干他们的电池
+and drain their battery.
+
+115
+00:05:57,630 --> 00:05:59,912
+这些方法都有助于减少卸载率
+There are ways to reduce these uninstalls.
+
+116
+00:05:59,912 --> 00:06:02,330
+卸载会最终的伤害你的应用
+Uninstalls will ultimately hurt you
+
+117
+00:06:02,330 --> 00:06:05,840
+在商店里的出现和搜索结果
+in how you appear in the charts and search in the store.
+
+118
+00:06:05,840 --> 00:06:07,650
+记住要避免应用被卸载
+Always try to avoid these uninstalls.
+
+119
+00:06:10,280 --> 00:06:12,630
+别忘了  利用好所有我们
+And don't forget, take advantage of all
+
+120
+00:06:12,630 --> 00:06:16,700
+有趣的特点  独特的Android特性和最好的实践练习
+of our fun, unique Android features and best practices.
+
+121
+00:06:16,700 --> 00:06:19,680
+惊艳的图标会抓住每个人的注意力
+Standout icons catch everyone's attention,
+
+122
+00:06:19,680 --> 00:06:24,240
+并且Android图标有一个用户期待的显著模式
+and Android icons have a distinct style that our users look for.
+
+123
+00:06:24,240 --> 00:06:27,210
+这些应用有着在清晰背景下的轮廓
+The app should be a silhouette on a clear background
+
+124
+00:06:27,210 --> 00:06:30,800
+有着高的分辨率
+at a high definition, XXHDP.
+
+125
+00:06:30,800 --> 00:06:33,590
+确保你的应用对于设备进行了优化
+Make sure yours is optimized for devices
+
+126
+00:06:33,590 --> 00:06:36,990
+并且你应用有一个有效的识别方式
+and is an effective identifier of your app.
+
+127
+00:06:36,990 --> 00:06:39,850
+确保Play对它的分类准确
+Make a great Play listing that is very accurate
+
+128
+00:06:39,850 --> 00:06:43,360
+并且要包括在手机和平板上的应用截图
+and includes screenshots of both phone and tablets
+
+129
+00:06:43,360 --> 00:06:46,600
+并且给这个列表里创建一个好的视频
+as well as creating a great video for this listing.
+
+130
+00:06:46,600 --> 00:06:49,620
+当你的应用上市的时候  创建一个Google Play徽章
+When you are marketing your app, create a Google Play badge
+
+131
+00:06:49,620 --> 00:06:52,020
+在你的材料里面并且做一个链接
+on your materials and deep link it
+
+132
+00:06:52,020 --> 00:06:56,370
+连到Play商店你的应用列表  这样你的用户能更简单的找到你的应用
+to your Play store listing so your users can find your app easily.
+
+133
+00:06:56,370 --> 00:06:59,800
+最后  别忘了给你的应用增加一些乐趣
+And finally, don't forget to have some fun with your app
+
+134
+00:06:59,800 --> 00:07:03,170
+并且支持消费者在新的或者现有的方式来用
+and engage your consumers in new and exciting ways using
+
+135
+00:07:03,170 --> 00:07:09,079
+动态消息  实时壁纸  或者用好玩的小部件
+dynamic notifications, live wallpapers, and creative widgets.
+
+136
+00:07:09,079 --> 00:07:10,870
+感谢您花时间来学习
+Thank you for taking the time to learn more
+
+137
+00:07:10,870 --> 00:07:14,740
+关于这些最好的Google Play上的应用和游戏实例
+about some of the best practices for apps and games on Google Play.
+
+138
+00:07:14,740 --> 00:07:17,660
+我们期待看到你的新版本应用
+We are excited to see the new version of your app.
+
+139
+00:07:17,660 --> 00:07:19,600
+我是Serge  期待着
+My name is Serge, and I'm looking forward
+
+140
+00:07:19,600 --> 00:07:22,600
+与优秀的应用开发者一起工作
+to working with some great app developers.
+
+
