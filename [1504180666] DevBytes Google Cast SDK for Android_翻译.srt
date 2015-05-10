@@ -1,0 +1,374 @@
+1
+00:00:06,550 --> 00:00:08,660
+LEON NICHOLLS: 大家好  我是Leon Nicholls
+LEON NICHOLLS: Hi, my name is Leon Nicholls.
+
+2
+00:00:08,660 --> 00:00:11,610
+我是Google Cast的一名开发大使
+I'm a Developer Advocate for Google Cast.
+
+3
+00:00:11,610 --> 00:00:16,000
+在这里我将会告诉你关于Google Cast SDK for Android的一些信息
+I'm here to tell you about the Google Cast SDK for Android.
+
+4
+00:00:16,000 --> 00:00:18,730
+Google Cast SDK支持Android IOS 
+The Google Cast SDK supports Android, iOS,
+
+5
+00:00:18,730 --> 00:00:21,080
+以及桌面版的Chrome平台
+and desktop Chrome platforms.
+
+6
+00:00:21,080 --> 00:00:22,970
+针对这些平台开发的应用程序都能
+Apps developed for these platforms can all
+
+7
+00:00:22,970 --> 00:00:27,590
+与任何Google Cast设备进行交互  如Chromecast
+interact with any Google Cast device, such as Chromecast.
+
+8
+00:00:27,590 --> 00:00:29,590
+The Google Cast sender application
+
+9
+00:00:29,590 --> 00:00:32,940
+refers to an app running on a mobile device or laptop,
+
+10
+00:00:32,940 --> 00:00:36,500
+and the receiver application refers to an HTML application
+
+11
+00:00:36,500 --> 00:00:42,050
+running on Chromecast or other Google Cast receiver devices.
+
+12
+00:00:42,050 --> 00:00:44,250
+The release of the Google Cast SDK
+
+13
+00:00:44,250 --> 00:00:48,180
+is the public API for developers of Cast applications.
+
+14
+00:00:48,180 --> 00:00:50,650
+From now on, developers are in control
+
+15
+00:00:50,650 --> 00:00:54,690
+of releasing the Cast apps by using the new Google Cast SDK
+
+16
+00:00:54,690 --> 00:00:56,780
+developer console.
+
+17
+00:00:56,780 --> 00:00:59,250
+The Google Cast SDK is now a part of Android's Google Play
+
+18
+00:00:59,250 --> 00:01:04,739
+services, and will be shared across all Cast apps.
+
+19
+00:01:04,739 --> 00:01:09,730
+Let's take a look at the typical life cycle of a Cast sender app.
+
+20
+00:01:09,730 --> 00:01:12,340
+When the sender app is launched, Cast devices
+
+21
+00:01:12,340 --> 00:01:15,530
+need to be discovered on the local network.
+
+22
+00:01:15,530 --> 00:01:18,520
+Once the user selects a device, the sender app
+
+23
+00:01:18,520 --> 00:01:22,760
+will connect to that device and launch the receiver app.
+
+24
+00:01:22,760 --> 00:01:25,070
+The sender app then creates a message channel
+
+25
+00:01:25,070 --> 00:01:29,510
+to the receiver app to send and receive messages.
+
+26
+00:01:29,510 --> 00:01:34,000
+The user can also disconnect from that device.
+
+27
+00:01:34,000 --> 00:01:38,580
+The first step in supporting Cast in an app is to add the Cast button.
+
+28
+00:01:38,580 --> 00:01:42,940
+There are three choices-- the MediaRouter ActionBar provider,
+
+29
+00:01:42,940 --> 00:01:46,310
+the MediaRouter button, or a custom button.
+
+30
+00:01:46,310 --> 00:01:51,400
+We recommend the provider since that's the easiest integration.
+
+31
+00:01:51,400 --> 00:01:54,290
+The Cast button has to be added to the menu for the ActionBar,
+
+32
+00:01:54,290 --> 00:01:57,940
+or to the activity layout resource file.
+
+33
+00:01:57,940 --> 00:02:00,950
+The advantage to create a MediaRouter selector, which
+
+34
+00:02:00,950 --> 00:02:03,520
+will fall to devices to discover only
+
+35
+00:02:03,520 --> 00:02:06,710
+Cast devices that can run your app.
+
+36
+00:02:06,710 --> 00:02:11,140
+The selector is attached to the Cast button when the activity starts.
+
+37
+00:02:11,140 --> 00:02:13,490
+Here is an example of how easy it
+
+38
+00:02:13,490 --> 00:02:15,810
+is to add a Cast button to the ActionBar
+
+39
+00:02:15,810 --> 00:02:18,930
+[? compat ?] using the MediaRouter ActionBar provider
+
+40
+00:02:18,930 --> 00:02:21,340
+in your menu XML.
+
+41
+00:02:21,340 --> 00:02:23,620
+Other ways of integrating the Cast button
+
+42
+00:02:23,620 --> 00:02:28,350
+is documented by the MediaRouter support library.
+
+43
+00:02:28,350 --> 00:02:31,060
+The sender app also has to tell the MediaRouter to start
+
+44
+00:02:31,060 --> 00:02:33,430
+discovery of Cast devices by adding
+
+45
+00:02:33,430 --> 00:02:36,630
+a callback when the activity starts.
+
+46
+00:02:36,630 --> 00:02:38,660
+The app will be informed by the MediaRouter
+
+47
+00:02:38,660 --> 00:02:42,600
+when the user has selected a device from the Cast menu.
+
+48
+00:02:42,600 --> 00:02:45,580
+As a best practice, remove the callback
+
+49
+00:02:45,580 --> 00:02:51,360
+when discovery is no longer needed, to conserve battery usage.
+
+50
+00:02:51,360 --> 00:02:54,930
+Here's an example of how to add a callback to the MediaRouter
+
+51
+00:02:54,930 --> 00:02:57,820
+to start device discovery.
+
+52
+00:02:57,820 --> 00:03:04,230
+The device the user has selected is extracted from the callback data.
+
+53
+00:03:04,230 --> 00:03:08,630
+Now that the sender app knows which Cast device the user has selected,
+
+54
+00:03:08,630 --> 00:03:12,250
+launching the receiver app involves a few steps.
+
+55
+00:03:12,250 --> 00:03:15,480
+The sender app needs to connect to Google Play Services using
+
+56
+00:03:15,480 --> 00:03:18,450
+the GoogleAPIClient Cast.
+
+57
+00:03:18,450 --> 00:03:20,850
+Then the app uses the Cast.CastAPI
+
+58
+00:03:20,850 --> 00:03:24,970
+Cast to launch the receiver app using the app ID obtained
+
+59
+00:03:24,970 --> 00:03:27,560
+from the Developer Console.
+
+60
+00:03:27,560 --> 00:03:29,930
+Once the receiver app has launched,
+
+61
+00:03:29,930 --> 00:03:33,760
+the sender can create a media message channel or a custom
+
+62
+00:03:33,760 --> 00:03:36,530
+message channel to the receiver.
+
+63
+00:03:36,530 --> 00:03:38,910
+The app has to handle various callbacks
+
+64
+00:03:38,910 --> 00:03:43,140
+about the application and the channel status.
+
+65
+00:03:43,140 --> 00:03:45,390
+Here's an example of how to launch the receiver
+
+66
+00:03:45,390 --> 00:03:50,230
+app once the sender app has connected to Google Play services.
+
+67
+00:03:50,230 --> 00:03:52,930
+The result callback is invoked with the launch status
+
+68
+00:03:52,930 --> 00:03:55,650
+and the application metadata.
+
+69
+00:03:55,650 --> 00:03:57,920
+Note the same asynchronous callback model
+
+70
+00:03:57,920 --> 00:04:03,240
+is used throughout the life cycle of a Cast app.
+
+71
+00:04:03,240 --> 00:04:05,580
+To play media on the receiver, the sender app
+
+72
+00:04:05,580 --> 00:04:11,210
+has to create a MediaInfo instance with the URL of the media stream.
+
+73
+00:04:11,210 --> 00:04:12,880
+The RemoteMediaPlayer Cast is then
+
+74
+00:04:12,880 --> 00:04:16,880
+used to load that media stream on the receiver.
+
+75
+00:04:16,880 --> 00:04:20,360
+The sender app then accepts commands such as play and pause
+
+76
+00:04:20,360 --> 00:04:23,140
+using the RemoteMediaPlayer.
+
+77
+00:04:23,140 --> 00:04:26,000
+The sender app has to handle callbacks about the media
+
+78
+00:04:26,000 --> 00:04:29,730
+status during playback.
+
+79
+00:04:29,730 --> 00:04:32,090
+Finally, let's take a look at an example
+
+80
+00:04:32,090 --> 00:04:36,510
+of how to create a MediaInfo instance for a video stream.
+
+81
+00:04:36,510 --> 00:04:39,390
+The video stream is loaded on the receiver using
+
+82
+00:04:39,390 --> 00:04:42,180
+the RemoteMediaPlayer instance.
+
+83
+00:04:42,180 --> 00:04:47,700
+The ResultCallback is invoked with the load command status.
+
+84
+00:04:47,700 --> 00:04:50,490
+You can get more details about the Google Cast SDK
+
+85
+00:04:50,490 --> 00:04:54,530
+at developers.google.com/cast.
+
+86
+00:04:54,530 --> 00:04:57,440
+It's also important to take a look at the Cast Design
+
+87
+00:04:57,440 --> 00:05:01,750
+Checklist, which has design implications for your app.
+
+88
+00:05:01,750 --> 00:05:04,640
+We've also opened source sample Cast apps
+
+89
+00:05:04,640 --> 00:05:07,160
+that you can use as a reference.
+
+90
+00:05:07,160 --> 00:05:12,740
+If you have any developer questions, post those on Stack Overflow.
+
+91
+00:05:12,740 --> 00:05:16,970
+Join our Google Cast Developers Community on Google+.
+
+92
+00:05:16,970 --> 00:05:18,740
+Happy Casting.
