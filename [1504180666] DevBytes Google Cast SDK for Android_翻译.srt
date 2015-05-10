@@ -20,7 +20,7 @@ The Google Cast SDK supports Android, iOS,
 
 5
 00:00:18,730 --> 00:00:21,080
-以及桌面版的Chrome平台
+以及桌面版的Chrome浏览器平台
 and desktop Chrome platforms.
 
 6
@@ -30,345 +30,431 @@ Apps developed for these platforms can all
 
 7
 00:00:22,970 --> 00:00:27,590
-与任何Google Cast设备进行交互  如Chromecast
+与任何Google Cast设备进行交互  比如Chromecast
 interact with any Google Cast device, such as Chromecast.
 
 8
 00:00:27,590 --> 00:00:29,590
+Google Cast sender端
 The Google Cast sender application
 
 9
 00:00:29,590 --> 00:00:32,940
+是指运行在移动设备或笔记本的应用程序
 refers to an app running on a mobile device or laptop,
 
 10
 00:00:32,940 --> 00:00:36,500
+receiver端是指一个HTML应用程序
 and the receiver application refers to an HTML application
 
 11
 00:00:36,500 --> 00:00:42,050
+它运行在Chromecast或其他Google Case receiver设备上
 running on Chromecast or other Google Cast receiver devices.
 
 12
 00:00:42,050 --> 00:00:44,250
+Google Case SDK的发行版
 The release of the Google Cast SDK
 
 13
 00:00:44,250 --> 00:00:48,180
+是为Cast应用程序的开发者们提供的公共API
 is the public API for developers of Cast applications.
 
 14
 00:00:48,180 --> 00:00:50,650
+从现在开始  开发者们通过使用
 From now on, developers are in control
 
 15
 00:00:50,650 --> 00:00:54,690
+新的Google Cast SDK 开发者控制台
 of releasing the Cast apps by using the new Google Cast SDK
 
 16
 00:00:54,690 --> 00:00:56,780
+来控制Cast应用程序的发布流程
 developer console.
 
 17
 00:00:56,780 --> 00:00:59,250
+Google Cast SDK现在是Android的Google Play服务的一部分
 The Google Cast SDK is now a part of Android's Google Play
 
 18
 00:00:59,250 --> 00:01:04,739
+并且将在所有的Cast应用程序之间共享
 services, and will be shared across all Cast apps.
 
 19
 00:01:04,739 --> 00:01:09,730
+让我们来看看一个Cast sender应用的典型生命周期
 Let's take a look at the typical life cycle of a Cast sender app.
 
 20
 00:01:09,730 --> 00:01:12,340
+当sender程序启动后  Cast设备
 When the sender app is launched, Cast devices
 
 21
 00:01:12,340 --> 00:01:15,530
+需要在本地网络被发现
 need to be discovered on the local network.
 
 22
 00:01:15,530 --> 00:01:18,520
+一旦用户选择了一个设备  sender程序
 Once the user selects a device, the sender app
 
 23
 00:01:18,520 --> 00:01:22,760
+将会连接这个设备并启动receiver程序
 will connect to that device and launch the receiver app.
 
 24
 00:01:22,760 --> 00:01:25,070
+然后sender程序创建一个消息通道
 The sender app then creates a message channel
 
 25
 00:01:25,070 --> 00:01:29,510
+到receiver程序  以用来发送和接收消息
 to the receiver app to send and receive messages.
 
 26
 00:01:29,510 --> 00:01:34,000
+用户也可以从这些设备上断开连接
 The user can also disconnect from that device.
 
 27
 00:01:34,000 --> 00:01:38,580
+使应用程序支持Cast的第一步操作是添加一个Cast按钮
 The first step in supporting Cast in an app is to add the Cast button.
 
 28
 00:01:38,580 --> 00:01:42,940
+有三个选择  MediaRouter ActionBar提供者
 There are three choices-- the MediaRouter ActionBar provider,
 
 29
 00:01:42,940 --> 00:01:46,310
+MediaRouter按钮  或自定义按钮
 the MediaRouter button, or a custom button.
 
 30
 00:01:46,310 --> 00:01:51,400
+我们建议提供者因为它是最简单的整合
 We recommend the provider since that's the easiest integration.
 
 31
 00:01:51,400 --> 00:01:54,290
+对于ActionBar  Cast按钮需要添加添加到菜单中
 The Cast button has to be added to the menu for the ActionBar,
 
 32
 00:01:54,290 --> 00:01:57,940
+或者是activity布局资源文件中
 or to the activity layout resource file.
 
 33
 00:01:57,940 --> 00:02:00,950
+创建一个MeidaRouter选择器的优点是
 The advantage to create a MediaRouter selector, which
 
 34
 00:02:00,950 --> 00:02:03,520
+它将会下拉显示的设备是
 will fall to devices to discover only
 
 35
 00:02:03,520 --> 00:02:06,710
+仅仅可以运行你的应用的Cast设备
 Cast devices that can run your app.
 
 36
 00:02:06,710 --> 00:02:11,140
+选择器是当这个activity启动时附加到Cast按钮上的
 The selector is attached to the Cast button when the activity starts.
 
 37
 00:02:11,140 --> 00:02:13,490
+这里有个例子是关于
 Here is an example of how easy it
 
 38
 00:02:13,490 --> 00:02:15,810
+在ActionBar上添加一个Cast按钮是多么的简单
 is to add a Cast button to the ActionBar
 
 39
 00:02:15,810 --> 00:02:18,930
+只需在你的menu XML文件中使用MediaRouter ActionBar提供者
 [? compat ?] using the MediaRouter ActionBar provider
 
 40
 00:02:18,930 --> 00:02:21,340
+就可以了
 in your menu XML.
 
 41
 00:02:21,340 --> 00:02:23,620
+其他的集成Cast按钮的方式
 Other ways of integrating the Cast button
 
 42
 00:02:23,620 --> 00:02:28,350
+可以在通过MediaRouter支持库生成的文档中找到
 is documented by the MediaRouter support library.
 
 43
 00:02:28,350 --> 00:02:31,060
+在这个activity启动时  sender程序也需要
 The sender app also has to tell the MediaRouter to start
 
 44
 00:02:31,060 --> 00:02:33,430
+通过添加一个回调函数来告诉MediaRouter
 discovery of Cast devices by adding
 
 45
 00:02:33,430 --> 00:02:36,630
+启动发现Cast设备
 a callback when the activity starts.
 
 46
 00:02:36,630 --> 00:02:38,660
+当用户从Cast菜单选择了一个设备
 The app will be informed by the MediaRouter
 
 47
 00:02:38,660 --> 00:02:42,600
+这个应用将通过MediaRouter被通知
 when the user has selected a device from the Cast menu.
 
 48
 00:02:42,600 --> 00:02:45,580
+最佳的做法是  当发现不再需要的时候
 As a best practice, remove the callback
 
 49
 00:02:45,580 --> 00:02:51,360
+移除这个回调函数  以节约电池的使用
 when discovery is no longer needed, to conserve battery usage.
 
 50
 00:02:51,360 --> 00:02:54,930
+这里有个例子是关于如何为MediaRouter添加一个回调函数
 Here's an example of how to add a callback to the MediaRouter
 
 51
 00:02:54,930 --> 00:02:57,820
+以启动设备发现的
 to start device discovery.
 
 52
 00:02:57,820 --> 00:03:04,230
+用户选择的设备是从回调函数数据中提取的
 The device the user has selected is extracted from the callback data.
 
 53
 00:03:04,230 --> 00:03:08,630
+现在sender程序知道用户选择了哪个Cast设备
 Now that the sender app knows which Cast device the user has selected,
 
 54
 00:03:08,630 --> 00:03:12,250
+启动这个receiver程序涉及到几个步骤
 launching the receiver app involves a few steps.
 
 55
 00:03:12,250 --> 00:03:15,480
+sender程序需要使用GoogleAPIClient Cast
 The sender app needs to connect to Google Play Services using
 
 56
 00:03:15,480 --> 00:03:18,450
+连接到Google Play Services
 the GoogleAPIClient Cast.
 
 57
 00:03:18,450 --> 00:03:20,850
+之后程序使用Cast.CastAPI
 Then the app uses the Cast.CastAPI
 
 58
 00:03:20,850 --> 00:03:24,970
+启动receiver程序  其中会使用到从开发者控制台中
 Cast to launch the receiver app using the app ID obtained
 
 59
 00:03:24,970 --> 00:03:27,560
+获得的应用程序ID
 from the Developer Console.
 
 60
 00:03:27,560 --> 00:03:29,930
+一旦这个receiver程序启动后
 Once the receiver app has launched,
 
 61
 00:03:29,930 --> 00:03:33,760
+sender程序就可以对receiver创建一个多媒体消息管道或
 the sender can create a media message channel or a custom
 
 62
 00:03:33,760 --> 00:03:36,530
+自定义消息管道
 message channel to the receiver.
 
 63
 00:03:36,530 --> 00:03:38,910
+这个应用需要处理不同的回调函数
 The app has to handle various callbacks
 
 64
 00:03:38,910 --> 00:03:43,140
+关于应用和管道的状态
 about the application and the channel status.
 
 65
 00:03:43,140 --> 00:03:45,390
+这里有个例子是关于当sender程序已经连接到Google Play服务后
 Here's an example of how to launch the receiver
 
 66
 00:03:45,390 --> 00:03:50,230
+是如何启动receiver程序的
 app once the sender app has connected to Google Play services.
 
 67
 00:03:50,230 --> 00:03:52,930
+结果回调函数需要以启动状态和
 The result callback is invoked with the launch status
 
 68
 00:03:52,930 --> 00:03:55,650
+应用程序元数据作为参数进行调用
 and the application metadata.
 
 69
 00:03:55,650 --> 00:03:57,920
+注意在Cast应用程序的整个生命周期
 Note the same asynchronous callback model
 
 70
 00:03:57,920 --> 00:04:03,240
+都使用相同的异步调用模型
 is used throughout the life cycle of a Cast app.
 
 71
 00:04:03,240 --> 00:04:05,580
+为了在receiver端播放媒体  sender程序
 To play media on the receiver, the sender app
 
 72
 00:04:05,580 --> 00:04:11,210
+需要创建一个具有媒体流数据URL的MediaInfo实例
 has to create a MediaInfo instance with the URL of the media stream.
 
 73
 00:04:11,210 --> 00:04:12,880
+然后RemoteMediaPlayer
 The RemoteMediaPlayer Cast is then
 
 74
 00:04:12,880 --> 00:04:16,880
+被用来在receiver端加载这些媒体流数据
 used to load that media stream on the receiver.
 
 75
 00:04:16,880 --> 00:04:20,360
+之后sender程序使用RemoteMediaPlayer
 The sender app then accepts commands such as play and pause
 
 76
 00:04:20,360 --> 00:04:23,140
+接受诸如播放和暂停等命令
 using the RemoteMediaPlayer.
 
 77
 00:04:23,140 --> 00:04:26,000
+sender程序需要在重放时
 The sender app has to handle callbacks about the media
 
 78
 00:04:26,000 --> 00:04:29,730
+执行关于媒体状态的回调函数
 status during playback.
 
 79
 00:04:29,730 --> 00:04:32,090
+最后  让我们看一个例子
 Finally, let's take a look at an example
 
 80
 00:04:32,090 --> 00:04:36,510
+关于如何为视频流创建一个MediaInfo实例
 of how to create a MediaInfo instance for a video stream.
 
 81
 00:04:36,510 --> 00:04:39,390
+视频流在receiver端使用RemoteMediaPlayer实例
 The video stream is loaded on the receiver using
 
 82
 00:04:39,390 --> 00:04:42,180
+来加载
 the RemoteMediaPlayer instance.
 
 83
 00:04:42,180 --> 00:04:47,700
+ResultCallback以加载命令状态作为参数来调用
 The ResultCallback is invoked with the load command status.
 
 84
 00:04:47,700 --> 00:04:50,490
+你可以在developers.google.com/cast
 You can get more details about the Google Cast SDK
 
 85
 00:04:50,490 --> 00:04:54,530
+获取关于Google Cast SDK的更多详细信息
 at developers.google.com/cast.
 
 86
 00:04:54,530 --> 00:04:57,440
+同样重要的是要看一下Cast Design Checklist
 It's also important to take a look at the Cast Design
 
 87
 00:04:57,440 --> 00:05:01,750
+这里有一些应用的设计原则
 Checklist, which has design implications for your app.
 
 88
 00:05:01,750 --> 00:05:04,640
+我们也开源了一些示例Cast应用程序
 We've also opened source sample Cast apps
 
 89
 00:05:04,640 --> 00:05:07,160
+你可以用来作为参考
 that you can use as a reference.
 
 90
 00:05:07,160 --> 00:05:12,740
+如果你有人任何开发者的问题  请在Stack Overflow上贴出来吧
 If you have any developer questions, post those on Stack Overflow.
 
 91
 00:05:12,740 --> 00:05:16,970
+欢迎在Google+上加入我们的Google Cast开发者社区
 Join our Google Cast Developers Community on Google+.
 
 92
 00:05:16,970 --> 00:05:18,740
+Happy Casting
 Happy Casting.
+
