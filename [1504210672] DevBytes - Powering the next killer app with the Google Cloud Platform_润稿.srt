@@ -1,0 +1,690 @@
+﻿1
+00:00:00,160 --> 00:00:01,650
+WESLEY CHUN: 我是Wesley Chun
+WESLEY CHUN: This is Wesley Chun.
+
+2
+00:00:01,650 --> 00:00:03,170
+在Google我们希望我们的工具
+Here at Google, we want our tools
+
+3
+00:00:03,170 --> 00:00:05,480
+能够帮助你建立出下一个杀手级应用程序
+enable you to build the next killer app.
+
+4
+00:00:05,480 --> 00:00:07,090
+在这期Dev Byte  我会给你介绍
+In this Dev Byte, I'll introduce you
+
+5
+00:00:07,090 --> 00:00:09,820
+Google云平台的核心部件
+to the core components of the Google Cloud Platform.
+
+6
+00:00:09,820 --> 00:00:12,370
+我也会分享其他人在使用它时的一些
+I'll also share a few stories of what others have already
+
+7
+00:00:12,370 --> 00:00:13,189
+小故事
+done with it.
+
+8
+00:00:13,189 --> 00:00:15,480
+一旦你熟悉了这个平台的服务
+Once you're familiar with the services in the platform,
+
+9
+00:00:15,480 --> 00:00:18,250
+你也会被Google的丰富资源  经验和性能所影响
+you too will be able to leverage Google's vast resources,
+
+10
+00:00:18,250 --> 00:00:22,460
+来帮助你强大你的好点子
+experience, and performance to help you power that great idea.
+
+11
+00:00:22,460 --> 00:00:25,650
+在Google  我们总是在考虑规模和创新
+At Google, we're always thinking about scale and innovation.
+
+12
+00:00:25,650 --> 00:00:27,150
+这是一些研究论文
+Here are some of the research papers
+
+13
+00:00:27,150 --> 00:00:29,120
+多年来我们发表的
+we published over the years, many of which
+
+14
+00:00:29,120 --> 00:00:32,910
+其中许多论文直接导致了Google云平台的服务
+have led directly to services in the Google Cloud Platform.
+
+15
+00:00:32,910 --> 00:00:38,450
+你已经知道Google Search  YouTube和Gmail服务 
+You already know Google Search and YouTube and Gmail services
+
+16
+00:00:38,450 --> 00:00:40,300
+他们已经在Google大规模的运行
+which run at Google scale.
+
+17
+00:00:40,300 --> 00:00:42,550
+如果你可以利用这些服务之后的这种规模和创新
+What if you could take advantage of that kind of scale
+
+18
+00:00:42,550 --> 00:00:46,410
+来为你的伟大想法提供帮助呢
+and innovation that's behind our services, but for your big idea?
+
+19
+00:00:46,410 --> 00:00:48,880
+这就是Google云平台的价值所在
+This is where the Google Cloud Platform steps in,
+
+20
+00:00:48,880 --> 00:00:53,750
+让你的应用得到Google的力量
+enabling you to take your app to the power of Google.
+
+21
+00:00:53,750 --> 00:00:55,416
+那什么是Google云平台呢
+What is the Google Cloud Platform?
+
+22
+00:00:55,416 --> 00:00:56,790
+简单的说  它是一个服务的集合
+Well, in brief, it's a collection
+
+23
+00:00:56,790 --> 00:01:00,810
+这些服务由三个类别组成  计算  存储
+of services organized into three categories-- compute, storage,
+
+24
+00:01:00,810 --> 00:01:03,690
+和应用程序  以帮助你的应用规模化运行
+and application services to help your apps scale.
+
+25
+00:01:03,690 --> 00:01:05,710
+选择你想要的服务
+Pick and choose which services you want,
+
+26
+00:01:05,710 --> 00:01:09,070
+而只需为你使用的资源付款
+and only pay for the resources you use.
+
+27
+00:01:09,070 --> 00:01:10,950
+我们从计算类别开始
+We begin with the compute category,
+
+28
+00:01:10,950 --> 00:01:14,140
+我们已经有了Google App引擎和Google Compute引擎
+where we've got Google App Engine and Google Compute Engine.
+
+29
+00:01:14,140 --> 00:01:16,930
+让我们从Compute引擎开始  我们在基础设施里
+Let's start with Compute Engine, our computing solution
+
+30
+00:01:16,930 --> 00:01:19,600
+的计算方案即服务层
+at the infrastructure as a service layer.
+
+31
+00:01:19,600 --> 00:01:22,090
+创建Linux虚拟机并且连接到它们
+Create Linux virtual machines and connect to them
+
+32
+00:01:22,090 --> 00:01:24,060
+就像其他网络计算机一样
+like any other network computer.
+
+33
+00:01:24,060 --> 00:01:27,029
+它们的特点是拍摄持久磁盘快照  虚拟机在线迁移
+They feature persistent disks with snapshotting, live virtual
+
+34
+00:01:27,029 --> 00:01:29,320
+以避免烦人的维护周期
+machine migration to get around those pesky maintenance
+
+35
+00:01:29,320 --> 00:01:33,210
+网络连接和防火墙  负载均衡
+periods, networking and firewalls, load balancing,
+
+36
+00:01:33,210 --> 00:01:35,320
+以及为高可用设计的地域分区
+and regional zones for high availability
+
+37
+00:01:35,320 --> 00:01:39,650
+以实现你的技术栈并且解决真正的大问题
+to implement your technology stack and solve really big problems with.
+
+38
+00:01:39,650 --> 00:01:40,730
+有多大呢
+How big?
+
+39
+00:01:40,730 --> 00:01:42,895
+恩，这里有一个真正的大数据例子
+Well, here's an example of really big data.
+
+40
+00:01:42,895 --> 00:01:44,520
+比如说你要打算结婚了
+Let's say you were going to get married
+
+41
+00:01:44,520 --> 00:01:47,530
+你想要一个盛大的婚礼  需要准备邀请你
+and you wanted a huge wedding and needed prepare invitations
+
+42
+00:01:47,530 --> 00:01:50,780
+最亲密的150亿位朋友和亲戚
+for your closest 15 billion friends
+
+43
+00:01:50,780 --> 00:01:54,420
+他们中有大概70亿来自地球
+and relatives, which is roughly 7 billion guests from Earth
+
+44
+00:01:54,420 --> 00:01:57,640
+其他人来自其他星球
+and the other eight from other planets.
+
+45
+00:01:57,640 --> 00:01:59,470
+不管怎样  我们只能说我们有
+Well, anyway, let's just say we had that
+
+46
+00:01:59,470 --> 00:02:01,850
+你组织的地点  大约
+and you were organizing the addresses, roughly about
+
+47
+00:02:01,850 --> 00:02:03,565
+每个100字节的信封
+100 bytes each, for the envelopes.
+
+48
+00:02:03,565 --> 00:02:05,440
+为了确认这里面没有任何重复
+But to make sure there aren't any duplicates,
+
+49
+00:02:05,440 --> 00:02:08,160
+你需要将所有数据排序
+you would need to sort all of that data.
+
+50
+00:02:08,160 --> 00:02:11,210
+正好  MapR团队去年做了一些相同的工作
+Well, the MapR did something similar last year
+
+51
+00:02:11,210 --> 00:02:15,060
+在Compute引擎中使用Hadoop去设置分钟排序记录
+using Hadoop on Compute Engine to set the minute sort record.
+
+52
+00:02:15,060 --> 00:02:21,610
+他们的app能够获取150亿个100字节大小的记录
+Their app was able to take 15 billion 100 byte directors,
+
+53
+00:02:21,610 --> 00:02:26,130
+也就是1.5TB  或1500GB的数据
+meaning 1.5 terabytes, or 1,500 gigs of data,
+
+54
+00:02:26,130 --> 00:02:28,140
+并在不到一分钟的时间内进行排序
+and sorted it all in less than a minute.
+
+55
+00:02:28,140 --> 00:02:30,460
+在此之上  它们可以重现这个结果
+On top of this, they were able to reproduce this result
+
+56
+00:02:30,460 --> 00:02:33,520
+持续跨多节点运行不同的集群配置
+consistently across multiple runs and different cluster
+
+57
+00:02:33,520 --> 00:02:34,820
+configurations.
+
+58
+00:02:34,820 --> 00:02:37,680
+点击这个链接获得更多细节
+Click the link for more details.
+
+59
+00:02:37,680 --> 00:02:39,800
+另一个计算解决方案是App引擎
+The other Compute solution is App Engine,
+
+60
+00:02:39,800 --> 00:02:41,740
+我们的平台作为一个服务提供方
+our platform as a service offering.
+
+61
+00:02:41,740 --> 00:02:44,870
+这个方案提供给不想管理这方面事情和
+This solution is for developers who want to be more hands off
+
+62
+00:02:44,870 --> 00:02:48,480
+不希望解决这么多系统管理问题的开发者
+and don't want to deal that much with system administration.
+
+63
+00:02:48,480 --> 00:02:50,920
+因此在硬件和你的app之间的组件
+So components living between the hardware and your app,
+
+64
+00:02:50,920 --> 00:02:54,020
+例如操作系统  数据库和Web服务器
+such as the operating system, the database, and web servers,
+
+65
+00:02:54,020 --> 00:02:57,100
+都是由Google进行托管  因此你可以专注与自己的应用程序
+are all managed by Google so you can focus on your app.
+
+66
+00:02:57,100 --> 00:02:59,170
+使用熟悉的语言来构建你的解决方案
+Build your solution using familiar languages
+
+67
+00:02:59,170 --> 00:03:02,150
+像Java  Python  PHP和Go 
+like Java, Python, PHP, and Go.
+
+68
+00:03:02,150 --> 00:03:06,420
+上传你的代码并且让Google照顾这一切
+Upload your code and let Google take care of everything else.
+
+69
+00:03:06,420 --> 00:03:08,970
+Snapchat是一个十分流行的照片分享服务
+Snapchat is a highly popular photo sharing service
+
+70
+00:03:08,970 --> 00:03:13,170
+它一天服务超过3.5亿张照片和快照
+which serves more than 350 million photos or snaps a day.
+
+71
+00:03:13,170 --> 00:03:15,530
+是什么让他们发展到今天的规模
+What got them to scale to where they are today?
+
+72
+00:03:15,530 --> 00:03:17,940
+是Google App引擎
+Google App Engine.
+
+73
+00:03:17,940 --> 00:03:21,210
+Google云存储为你提供大型数据仓库
+Google Cloud Storage is for your massive data repository.
+
+74
+00:03:21,210 --> 00:03:24,610
+存储大量的文件和几乎任何大小的blob格式数据
+Store any number of files and blobs of virtually any size
+
+75
+00:03:24,610 --> 00:03:27,630
+对用户提供安全的控制访问
+securely with controlled access to users,
+
+76
+00:03:27,630 --> 00:03:30,960
+以及应用程序和其他Google云平台的服务
+as well as apps and other Google Cloud Platform services that
+
+77
+00:03:30,960 --> 00:03:34,480
+可以处理和分析你的数据
+can process and analyze your data.
+
+78
+00:03:34,480 --> 00:03:36,240
+Song Pop是这一代的名字
+Song Pop is this generation's name
+
+79
+00:03:36,240 --> 00:03:38,740
+这个曲调应用运行在Google App引擎上
+that tune app running on Google App Engine.
+
+80
+00:03:38,740 --> 00:03:41,200
+伴随着Google云存储  他们的app
+Along with Google Cloud Storage, their app
+
+81
+00:03:41,200 --> 00:03:46,810
+一天为8千万客户提供超过18TB的音乐
+serves more than 18 terabytes a day of music to its 80 million users.
+
+82
+00:03:46,810 --> 00:03:49,890
+Google Cloud SQL是在云端完全托管的  高度可用的
+Google Cloud SQL is the fully managed, highly available
+
+83
+00:03:49,890 --> 00:03:52,180
+关系数据库服务
+relational database service in the cloud.
+
+84
+00:03:52,180 --> 00:03:55,070
+创造  配置和使用MySQL数据库
+Create, configure, and use MySQL databases,
+
+85
+00:03:55,070 --> 00:03:57,460
+但是是在我们的数据中心承载它
+but host it in our data centers.
+
+86
+00:03:57,460 --> 00:03:59,340
+标准的MySQL Wire协议
+The standard MySQL wire protocol lets
+
+87
+00:03:59,340 --> 00:04:02,380
+让你从任何地方使用任何app连接上云端SQL
+you connect to Cloud SQL from any app anywhere.
+
+88
+00:04:02,380 --> 00:04:05,130
+同时它也支持JDBC
+And it also supports JDBC.
+
+89
+00:04:05,130 --> 00:04:08,430
+从复制  加密  补丁管理和备份中释放自己
+Free yourself from replication, encryption, patch management,
+
+90
+00:04:08,430 --> 00:04:11,220
+以便你可以专注于你的解决方法
+and backups so that you can focus on your solution.
+
+91
+00:04:11,220 --> 00:04:13,830
+它的一个最好的特点是它的
+One of its best features is its pay
+
+92
+00:04:13,830 --> 00:04:16,810
+按使用付费模式  用户可以选择为一个数据库
+per use model, where customers can opt to pay for a database
+
+93
+00:04:16,810 --> 00:04:20,870
+仅当它被使用时才支付费用  然后在剩下的时间
+only when it's being used, and then for inexpensive storage
+
+94
+00:04:20,870 --> 00:04:22,660
+使用便宜的存储
+the rest of the time.
+
+95
+00:04:22,660 --> 00:04:25,370
+Google云数据存储是存储
+Google Cloud Data Store is the place
+
+96
+00:04:25,370 --> 00:04:27,830
+NoSQL的键值数据的地方
+to store your NoSQL key value data.
+
+97
+00:04:27,830 --> 00:04:30,290
+它是一个完全托管的服务  可以自动的处理
+It's a fully managed service which automatically handles
+
+98
+00:04:30,290 --> 00:04:32,700
+分片  复制和扩容
+sharding, replication, and scaling.
+
+99
+00:04:32,700 --> 00:04:35,930
+存储的机制是非结构的和支持基于对象
+The storage mechanism is schemeless and supports either
+
+100
+00:04:35,930 --> 00:04:40,530
+或者SQL-like的查询  与资产交易一样
+object based or SQL-like queries as well as Asset transactions.
+
+101
+00:04:40,530 --> 00:04:42,250
+云数据库是同样的技术
+Cloud Datastore is the same technology
+
+102
+00:04:42,250 --> 00:04:45,700
+支持App引擎本地数据存储
+that powers App Engine's native data store.
+
+103
+00:04:45,700 --> 00:04:48,440
+Google BigQuery是一个令人兴奋地  大规模的数据分析工具
+Google BigQuery is an exciting, massive data analysis
+
+104
+00:04:48,440 --> 00:04:50,310
+可以让你在数据集中做查询
+tool that lets you make queries on data sets
+
+105
+00:04:50,310 --> 00:04:54,000
+之前是不可能的  困难的或是很消耗时间的
+that were previously impossible, difficult, or significantly
+
+106
+00:04:54,000 --> 00:04:57,540
+这些数据集比如四十年前婴儿的名字
+time consuming-- data sets such as baby names for the last four
+
+107
+00:04:57,540 --> 00:05:00,290
+每个字都用Shakespeare书写
+decades, every word written by Shakespeare,
+
+108
+00:05:00,290 --> 00:05:04,330
+或者是1929年以来的全球历史气象站数据
+or global historical weather station data since 1929.
+
+109
+00:05:04,330 --> 00:05:07,220
+使用BigQuery  你用SQL查询可以在几秒钟内
+Using BigQuery, you can analyze terabytes of data
+
+110
+00:05:07,220 --> 00:05:11,420
+分析TB级别的数据
+in mere seconds using SQL-like queries.
+
+111
+00:05:11,420 --> 00:05:13,860
+在BigQuery的交互式Web控制台中
+Here in BigQuery's interactive web console,
+
+112
+00:05:13,860 --> 00:05:16,930
+你可以针对你的数据集做点对点的查询
+you can issue ad hoc queries against your data set.
+
+113
+00:05:16,930 --> 00:05:19,550
+用今天讲的三个公共数据集其中的一个进行测试
+Take it for a test drive with one of these free public data
+
+114
+00:05:19,550 --> 00:05:22,420
+例如我刚刚提到的那个
+sets today, such as the ones I just mentioned
+
+115
+00:05:22,420 --> 00:05:24,340
+或者这个特别的查询
+or this particular query, which lets
+
+116
+00:05:24,340 --> 00:05:30,030
+它可以使你推到五大最新的维基百科页面
+you pull up the five top most updated Wikipedia pages.
+
+117
+00:05:30,030 --> 00:05:32,370
+Google Cloud Endpoints使你无缝的
+Google Cloud Endpoints enables you to seamlessly
+
+118
+00:05:32,370 --> 00:05:35,600
+创建APIs或者应用端点到你的服务里
+create APIs or application endpoints to your service,
+
+119
+00:05:35,600 --> 00:05:38,520
+让你更方便地添加新的Web或移动前端
+allowing you to more easily add new web or mobile front
+
+120
+00:05:38,520 --> 00:05:40,390
+到你现有的服务
+ends to your existing service.
+
+121
+00:05:40,390 --> 00:05:42,540
+它是你的应用前端客户端与
+It's the glue between your app's front end
+
+122
+00:05:42,540 --> 00:05:45,659
+后台连接在一起的胶水
+clients and your back end.
+
+123
+00:05:45,659 --> 00:05:47,075
+通过Google App引擎  
+Your web or mobile clients connect
+
+124
+00:05:47,075 --> 00:05:49,750
+你的网站或手机客户端可以连接到云端
+to Cloud Endpoints via Google App Engine
+
+125
+00:05:49,750 --> 00:05:52,940
+这样你可以去后端服务
+so that you can go back end services there or have
+
+126
+00:05:52,940 --> 00:05:55,780
+或者能满足这些需求的App引擎的概略代码
+skeleton codes sitting on App Engine for those requests
+
+127
+00:05:55,780 --> 00:05:57,620
+给到你实际上的后端  无论它
+to your actual back end, whether it
+
+128
+00:05:57,620 --> 00:06:01,050
+在计算引擎上还是其他外部服务器上
+be on Compute Engine or other external servers.
+
+129
+00:06:01,050 --> 00:06:03,970
+安全可以通过数据授权自动地
+Security via data authorization is automatically
+
+130
+00:06:03,970 --> 00:06:06,780
+在前端和App Engine之间完成
+handled between the front ends and App Engine.
+
+131
+00:06:06,780 --> 00:06:10,010
+甚至还有一个工具可以生成客户端代码
+There is even a tool that generates border plate client
+
+132
+00:06:10,010 --> 00:06:14,200
+Android使用Java  iOS使用Objective C
+side code in Java for Android, Objective C for iOS,
+
+133
+00:06:14,200 --> 00:06:16,530
+通用网络访问使用JavaScript
+and JavaScript for generic web access
+
+134
+00:06:16,530 --> 00:06:19,510
+来帮助你更加快速的进行
+to help you get going even faster.
+
+135
+00:06:19,510 --> 00:06:21,410
+这就是Google云平台
+So that's the Google Cloud Platform--
+
+136
+00:06:21,410 --> 00:06:23,590
+为其他人做了什么  最重要的是
+what it's done for others and most importantly, what
+
+137
+00:06:23,590 --> 00:06:24,810
+它可以为你做什么
+it can do for you.
+
+138
+00:06:24,810 --> 00:06:29,020
+我们期待在你下一个伟大的想法中帮到你
+We look forward to helping you with your next big idea.
+
+
